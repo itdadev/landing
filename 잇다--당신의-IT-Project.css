@@ -169,16 +169,16 @@
     font-size: 2.75rem;
   }
 }.u-section-2 .u-sheet-1 {
-  min-height: 629px;
+  min-height: 531px;
 }
 
 .u-section-2 .u-list-1 {
   width: 1140px;
   min-height: 432px;
-  grid-gap: 10px;
-  grid-template-columns: repeat(3, calc(33.3333% - 7px));
-  grid-template-rows: repeat(1, auto);
-  margin: 60px auto 60px 0;
+  grid-gap: 10px 10px;
+  grid-template-columns: calc(33.3333% - 7px) calc(33.3333% - 7px) calc(33.3333% - 7px);
+  grid-template-rows: auto;
+  margin: 99px auto 0 0;
 }
 
 .u-section-2 .u-container-layout-1 {
@@ -231,13 +231,15 @@
 
 @media (max-width: 1199px) {
   .u-section-2 .u-sheet-1 {
-    min-height: 553px;
+    min-height: 455px;
   }
 
   .u-section-2 .u-list-1 {
     width: 940px;
     min-height: 356px;
+    grid-gap: 10px;
     grid-template-columns: repeat(3, calc(33.333333333333336% - 7px));
+    grid-template-rows: repeat(1, auto);
   }
 
   .u-section-2 .u-image-1 {
@@ -258,7 +260,7 @@
 
 @media (max-width: 991px) {
   .u-section-2 .u-sheet-1 {
-    min-height: 1015px;
+    min-height: 917px;
   }
 
   .u-section-2 .u-list-1 {
@@ -295,7 +297,7 @@
     width: 340px;
   }
 }.u-section-3 .u-sheet-1 {
-  min-height: 500px;
+  min-height: 654px;
 }
 
 .u-section-3 .u-layout-wrap-1 {
@@ -304,22 +306,27 @@
 }
 
 .u-section-3 .u-layout-cell-1 {
-  min-height: 500px;
+  min-height: 534px;
 }
 
 .u-section-3 .u-container-layout-1 {
-  padding: 30px;
+  padding: 30px 0;
 }
 
 .u-section-3 .u-text-1 {
   text-transform: none;
   font-size: 2.25rem;
-  margin: 0;
+  margin: 0 30px;
 }
 
 .u-section-3 .u-text-2 {
   font-size: 1.5rem;
-  margin: 20px 0 0;
+  margin: 20px 30px 0;
+}
+
+.u-section-3 .u-map-1 {
+  height: 286px;
+  margin: 80px auto 0;
 }
 
 .u-section-3 .u-layout-cell-2 {
@@ -354,7 +361,22 @@
   }
 
   .u-section-3 .u-layout-cell-1 {
-    min-height: 412px;
+    min-height: 440px;
+  }
+
+  .u-section-3 .u-text-1 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .u-section-3 .u-text-2 {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .u-section-3 .u-map-1 {
+    margin-right: initial;
+    margin-left: initial;
   }
 
   .u-section-3 .u-layout-cell-2 {
@@ -395,11 +417,6 @@
 }
 
 @media (max-width: 767px) {
-  .u-section-3 .u-container-layout-1 {
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-
   .u-section-3 .u-container-layout-2 {
     padding-left: 10px;
     padding-right: 10px;
