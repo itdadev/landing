@@ -31557,12 +31557,19 @@ a.u-link.u-text-hover-grey-90:hover {
   }
 }
 @media (max-width: 575px) {
+  .u-footer .u-sheet-1 {
+    min-height: 115px;
+  }
+
   .u-footer .u-text-1 {
     width: 340px;
   }
 
   .u-footer .u-text-2 {
-    margin-right: 132px;
+    width: auto;
+    margin-top: -82px;
+    margin-right: 218px;
+    margin-left: -86px;
   }
 }
 
