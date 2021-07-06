@@ -32898,16 +32898,15 @@ a.u-link.u-text-hover-grey-90:hover {
 }
 @media (max-width: 767px) {
   .u-header .u-image-1 {
-    width: 126px;
-    height: 32px;
     margin-left: calc(((100% - 1140px) / 2) + 272px);
+    width: auto;
   }
 }
 @media (max-width: 575px) {
   .u-header .u-image-1 {
+    width: 126px;
+    height: 32px;
     margin-left: calc(((100% - 1140px) / 2) + 507px);
-    width: auto;
-    height: auto;
   }
 }
 .u-footer {
