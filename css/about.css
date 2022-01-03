@@ -1,0 +1,29 @@
+.text {
+  text-align: center;
+}
+.text h1{
+  font-size: var(--fs-50);
+  color: var(--grey-color);
+  font-weight: 700;
+  line-height: 65px;
+  margin: 12rem 0 9rem;
+}
+.fullImage{
+  aspect-ratio: 2/1;
+  width: 100%;
+  background: var(--point-color);
+}
+
+.innerText{
+  margin: 6rem 0 3rem;
+  font-size: var(--fs-18);
+  color: var(--grey-color);
+  line-height: 25px;
+}
+.innerText p{
+  margin-top: 20px;
+}
+
+main h2 {
+
+}
