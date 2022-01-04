@@ -1,29 +1,84 @@
 .text {
   text-align: center;
 }
-.text h1{
+
+.text h1 {
   font-size: var(--fs-50);
   color: var(--grey-color);
   font-weight: 700;
   line-height: 65px;
   margin: 12rem 0 9rem;
 }
-.fullImage{
+
+.fullImage {
+  position: relative;
   aspect-ratio: 2/1;
   width: 100%;
   background: var(--point-color);
+  overflow: hidden;
 }
 
-.innerText{
+.fullImage img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.innerText {
   margin: 6rem 0 3rem;
   font-size: var(--fs-18);
   color: var(--grey-color);
   line-height: 25px;
 }
-.innerText p{
+
+.innerText p {
   margin-top: 20px;
 }
 
-main h2 {
+.infoWrap h4 {
+  margin-bottom: 2rem;
+  text-indent: 24px;
+}
 
+.mapSample {
+  width: 100%;
+  height: 300px;
+  margin: 3rem 0;
+  background-color: var(--point-color);
+  border-radius: 24px;
+}
+
+.contactInfo a {
+  display: flex;
+  width: 100%;
+}
+
+.contactInfo a img {
+  /* width: 20%; */
+  height: 18px;
+  margin-right: 14px;
+  vertical-align: middle;
+}
+
+address {
+  margin-top: 3rem;
+}
+
+@media (min-width: 1024px) {
+  .visitInfo>div {
+    display: flex;
+  }
+
+  .mapSample {
+    width: 70%;
+    margin-right: 50px;
+  }
+
+  .infoWrap{
+    margin-top: 20px;
+  }
+  .infoWrap h4{
+    text-indent: 0;
+  }
 }

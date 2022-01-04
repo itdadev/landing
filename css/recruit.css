@@ -1,0 +1,6 @@
+.recruitWrap>p{
+  font-size: var(--fs-18);
+  padding: 3rem 0;
+  border-bottom: 2px solid var(--point-color);
+}
+

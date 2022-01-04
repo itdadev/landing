@@ -1,0 +1,159 @@
+.itdaPDF {
+  text-align: center;
+}
+
+.contectWrap h2 {
+  font-size: var(--fs-18);
+}
+
+.itdaPDF a {
+  display: inline-block;
+  text-align: center;
+  padding: 3px 20px;
+  background: var(--point-color);
+  border-radius: 30px;
+  color: white;
+  font-size: var(--fs-18);
+}
+
+.itdaPDF a img {
+  width: 22px;
+  vertical-align: middle;
+}
+
+.contactMain {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+}
+
+.infoWrap h4 {
+  margin-bottom: 2rem;
+  text-indent: 24px;
+}
+
+.mapSample {
+  display: block;
+  width: 100%;
+  height: 200px;
+  margin: 20px 0;
+  background-color: var(--point-color);
+  border-radius: 24px;
+}
+
+.contactInfo a {
+  display: flex;
+  width: 100%;
+  margin-bottom: 3px;
+}
+
+.contactInfo a img {
+  height: 18px;
+  margin-right: 14px;
+  vertical-align: middle;
+}
+
+address {
+  margin-top: 3rem;
+  margin-left: 2.4rem;
+}
+
+form {
+  display: block;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  font-size: var(--fs-18);
+}
+
+form legend {
+  font-weight: 700;
+  color: var(--base-color);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+form li label {
+  display: block;
+  color: var(--grey-three);
+  margin-bottom: 1.8rem;
+  margin-top: 2.4rem;
+}
+
+form li input,
+textarea {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 1px solid var(--light-grey);
+  outline: none;
+  color: var(--base-color);
+  font-family: inherit;
+  resize: none;
+  transition: all 0.3s;
+}
+
+form li input:focus,
+textarea:focus {
+  border-color: var(--point-color);
+}
+
+form li input:focus::placeholder,
+textarea:focus::placeholder {
+  opacity: 0;
+}
+
+form li input::placeholder,
+textarea::placeholder {
+  opacity: 1;
+  color: var(--grey-color);
+  transition: all 0.3s;
+}
+
+form button {
+  background: var(--point-color);
+  width: 100%;
+  margin-top: 3rem;
+  padding: 10px 0;
+  border: none;
+  border-radius: 30px;
+  color: white;
+}
+
+@media (min-width: 1024px) {
+  .contectWrap h2 {
+    font-size: var(--fs-24);
+  }
+
+  .itdaPDF a {
+    display: inline-block;
+    text-align: center;
+    padding: 2rem 4.2rem;
+    background: var(--point-color);
+    border-radius: 10px;
+    color: white;
+    font-size: var(--fs-18);
+  }
+
+  .contactMain {
+    margin-top: 6rem;
+    flex-direction: row;
+  }
+
+  main>section {
+    margin-right: 10%;
+  }
+
+  form {
+    flex: 2;
+    margin-top: 0;
+  }
+
+  form button {
+    border-radius: 0;
+  }
+
+
+
+}

@@ -1,0 +1,67 @@
+
+.serviceWrap .bgText {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: var(--fs-160);
+  line-height: 120px;
+  color: black;
+  font-weight: 700;
+  opacity: 0.03;
+  transform: rotate(180deg);
+  writing-mode: vertical-lr;
+  white-space: nowrap;
+}
+
+.serviceWrap>p {
+  font-size: var(--fs-18);
+  padding: 3rem 0;
+  border-bottom: 2px solid var(--point-color);
+}
+
+.aLink {
+  font-size: var(--fs-15);
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 0;
+}
+
+.aLink a {
+  color: var(--grey-color);
+  opacity: 0.5;
+}
+
+.aLink a.active {
+  opacity: 1;
+  font-weight: 700;
+}
+
+.imgWrap{
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 2/1;
+  background: var(--point-color);
+  overflow: hidden;
+}
+.imgWrap>img{
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+figure {
+  margin-top: 6rem;
+}
+figure figcaption {
+  display: inline-block;
+  font-size: var(--fs-18);
+  color: var(--grey-six);
+  text-align: right;
+  padding: 2rem 0;
+}
+figure figcaption p{
+  margin-bottom: 3rem;
+}
