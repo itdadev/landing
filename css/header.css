@@ -31,6 +31,7 @@
   transform: translateY(-50%);
   width: 20px;
   height: 15px;
+  cursor: pointer;
 }
 
 .mobileHeader .hamburger.active span:first-child{

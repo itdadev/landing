@@ -35,6 +35,12 @@ body{
   color: var(--base-color);
 }
 
+@media (min-width:1024px) {
+  body{
+    font-size: var( --fs-16);
+  } 
+}
+
 a {
   text-decoration: none;
   color: inherit;

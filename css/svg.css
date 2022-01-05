@@ -1,0 +1,195 @@
+
+g#main-banner > path{
+  animation-fill-mode: both;
+}
+#rec1 {
+  /* opacity: 0; */
+  animation: rec1 3s ease-in-out;
+  transform-origin: 0% 15%;
+}
+
+#line1 {
+  animation: line1 3s ease-in;
+  transform-origin: 5% 15%;
+}
+#rec2 {
+  animation: scale 3s ease;
+  transform-origin: 35% 15%;
+}
+#arrow1 {
+  visibility: hidden;
+  animation: arrow1 3s ease;
+  transform-origin: 50%;
+  /* animation-delay: 3s; */
+}
+
+#rec3 {
+  animation: scale 3s ease-in-out;
+  transform-origin: 43% 20%;
+}
+
+#rec4 {
+  animation: scale 3s ease;
+  transform-origin: 45% 15%;
+}
+
+#alphabet-p {
+  animation: scale 3s ease;
+  transform-origin: 53% 23%;
+}
+
+#alphabet-l {
+  animation: alphabet-l 3s ease;
+}
+
+#alphabet-a {
+  animation: alphabet-a 3s ease;
+  transform-origin: 90% 23%;
+}
+
+#alphabet-n {
+  
+}
+
+#alphabet-d {
+
+}
+
+#balloon {
+  animation: balloon 3s ease;
+  transform-origin: 2% 100%;
+}
+
+#rec7{
+  animation: scale 3s ease;
+  transform-origin: 8.5% 85%;
+}
+
+#rec8{
+  visibility: hidden;
+  animation: scale 3s ease 3s;
+  transform-origin: 8.5% 85%;
+}
+
+#rec9 {
+  animation: rec9 3s ease;
+  transform-origin: 20% 85%;
+}
+
+#line2 {
+  visibility: hidden;
+  animation: line2 2s ease;
+  animation-delay: 6s;
+}
+
+#rec10 {
+  animation: scale 3s ease;
+  transform-origin: 25% 85%;
+}
+
+
+@keyframes rec1 {
+  from {
+    /* opacity: 0; */
+    transform: scale(0) translateX(-20px);
+  }
+  to {
+    transform: scale(1) translateX(0);
+  }
+}
+
+@keyframes line1 {
+  from {
+    visibility: hidden;
+    d: path('M130 81.3824H126.698');
+  }
+  to {
+    animation-delay: 3s;
+    visibility: visible;
+    d: path('M467.729 81.3824H126.698');
+  }
+}
+
+@keyframes scale {
+  from {
+    visibility: hidden;
+    transform: scale(0);
+  }
+  to {
+    visibility: visible;
+    transform: scale(1);
+  }
+}
+
+@keyframes arrow1 {
+  from {
+    visibility: visible;
+    d: path('M438.018 116.261L467.729 81.3824L436.726 40.0453');
+  }
+  to {
+    animation-delay: 3s;
+    d: path('M438.018 116.261L467.729 81.3824L436.726 40.0453');
+  }
+}
+
+@keyframes alphabet-l {
+  from {
+    visibility: hidden;
+    d: path('M1117.68 131.323H797.574V38.3144H816.46V114.245H820V131.323Z');
+  }
+  to {
+    animation-delay: 3s;
+    visibility: visible;
+    d: path('M1117.68 131.323H797.574V38.3144H816.46V114.245H1117.68V131.323Z');
+  }
+}
+
+@keyframes alphabet-a {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1) rotate(-20deg);
+  }
+
+  100% {
+    transform: scale(1) rotate(0);
+  }
+}
+
+@keyframes balloon {
+  0% {
+    transform: scale(0) rotate(-40deg);
+  }
+  60% {
+    transform: scale(1) rotate(10deg);
+  }
+}
+
+@keyframes line2 {
+  from {
+    visibility: hidden;
+    d: path('M140 489.586H137.032');
+  }
+  to {
+    visibility: visible;
+    d: path('M273.962 489.586H137.032');
+  }
+}
+
+@keyframes rec9 {
+  0% {
+    visibility: hidden;
+    transform: scale(0);
+  }
+  40% {
+    visibility: visible;
+    transform: scale(1);
+  }
+  60% {
+    transform: translateX(20px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}

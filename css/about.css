@@ -63,6 +63,7 @@
 
 address {
   margin-top: 3rem;
+  margin-left: 3rem;
 }
 
 @media (min-width: 1024px) {
@@ -77,8 +78,11 @@ address {
 
   .infoWrap{
     margin-top: 20px;
+    font-size: var(--fs-16);
   }
   .infoWrap h4{
     text-indent: 0;
   }
+
+
 }
