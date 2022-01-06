@@ -4,10 +4,6 @@ main {
   margin-top: 28px;
 }
 
-main svg {
-  width: 100%;
-  border: 1px solid blue;
-}
 
 /* border 공통 */
 section ul li>div {
