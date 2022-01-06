@@ -96,7 +96,7 @@ g#main-banner>path {
   visibility: hidden;
   animation: rec12 3s ease;
   transform-origin: 30% 82%;
-  transition: all 0.3s;
+  transition: all 3s;
 }
 
 @keyframes rec1 {

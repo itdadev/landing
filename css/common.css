@@ -27,6 +27,11 @@
   --grey-f1: #F1F1F1;
 }
 
+#map {
+  width: 100%;
+  height: 100%;
+}
+
 .wrap{
   box-sizing: border-box;
   height: auto;

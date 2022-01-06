@@ -13,7 +13,6 @@ main svg {
 section ul li>div {
   width: 100%;
   margin-top: 20px;
-  padding: 10% 15px 10% 0;
   display: flex;
   align-items: center;
   border: 0.279392px solid var(--point-color);
@@ -30,6 +29,8 @@ section ul li>div {
 
 .category ul li div {
   flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .icon {
@@ -39,12 +40,13 @@ section ul li>div {
 }
 
 .icon>img {
-  width: 100%;
+  width: 80%;
   min-width: 160px;
   max-width: 300px;
 }
 
 .text span {
+  text-align: center;
   display: inline-block;
   margin-bottom: 8px;
   font-size: var(--fs-18);
@@ -55,6 +57,7 @@ section ul li>div {
 .text p {
   font-size: var(--fs-14);
   line-height: 20px;
+  padding: 2rem;
 }
 
 .mainService ul li h4 {
@@ -122,8 +125,9 @@ section ul li>div {
     flex-direction: row;
   }
 
-  .category ul li div {
-    padding: 3% 10px;
+  .category ul li>div {
+    flex-direction: row;
+    padding: 2% 0;
   }
 
   .category ul li div:first-of-type {
