@@ -1,7 +1,7 @@
-
-g#main-banner > path{
+g#main-banner>path {
   animation-fill-mode: both;
 }
+
 #rec1 {
   /* opacity: 0; */
   animation: rec1 3s ease-in-out;
@@ -12,10 +12,12 @@ g#main-banner > path{
   animation: line1 3s ease-in;
   transform-origin: 5% 15%;
 }
+
 #rec2 {
   animation: scale 3s ease;
   transform-origin: 35% 15%;
 }
+
 #arrow1 {
   visibility: hidden;
   animation: arrow1 3s ease;
@@ -47,25 +49,21 @@ g#main-banner > path{
   transform-origin: 90% 23%;
 }
 
-#alphabet-n {
-  
-}
+#alphabet-n {}
 
-#alphabet-d {
-
-}
+#alphabet-d {}
 
 #balloon {
   animation: balloon 3s ease;
   transform-origin: 2% 100%;
 }
 
-#rec7{
+#rec7 {
   animation: scale 3s ease;
   transform-origin: 8.5% 85%;
 }
 
-#rec8{
+#rec8 {
   visibility: hidden;
   animation: scale 3s ease 3s;
   transform-origin: 8.5% 85%;
@@ -87,12 +85,26 @@ g#main-banner > path{
   transform-origin: 25% 85%;
 }
 
+#line3 {
+  visibility: hidden;
+  animation: line3 1s ease;
+  animation-delay: 2s;
+  transform-origin: 25% 85%;
+}
+
+#rec12 {
+  visibility: hidden;
+  animation: rec12 3s ease;
+  transform-origin: 30% 82%;
+  transition: all 0.3s;
+}
 
 @keyframes rec1 {
   from {
     /* opacity: 0; */
     transform: scale(0) translateX(-20px);
   }
+
   to {
     transform: scale(1) translateX(0);
   }
@@ -103,6 +115,7 @@ g#main-banner > path{
     visibility: hidden;
     d: path('M130 81.3824H126.698');
   }
+
   to {
     animation-delay: 3s;
     visibility: visible;
@@ -115,6 +128,7 @@ g#main-banner > path{
     visibility: hidden;
     transform: scale(0);
   }
+
   to {
     visibility: visible;
     transform: scale(1);
@@ -126,6 +140,7 @@ g#main-banner > path{
     visibility: visible;
     d: path('M438.018 116.261L467.729 81.3824L436.726 40.0453');
   }
+
   to {
     animation-delay: 3s;
     d: path('M438.018 116.261L467.729 81.3824L436.726 40.0453');
@@ -137,6 +152,7 @@ g#main-banner > path{
     visibility: hidden;
     d: path('M1117.68 131.323H797.574V38.3144H816.46V114.245H820V131.323Z');
   }
+
   to {
     animation-delay: 3s;
     visibility: visible;
@@ -148,6 +164,7 @@ g#main-banner > path{
   0% {
     transform: scale(0);
   }
+
   50% {
     transform: scale(1) rotate(-20deg);
   }
@@ -161,6 +178,7 @@ g#main-banner > path{
   0% {
     transform: scale(0) rotate(-40deg);
   }
+
   60% {
     transform: scale(1) rotate(10deg);
   }
@@ -171,6 +189,7 @@ g#main-banner > path{
     visibility: hidden;
     d: path('M140 489.586H137.032');
   }
+
   to {
     visibility: visible;
     d: path('M273.962 489.586H137.032');
@@ -182,14 +201,46 @@ g#main-banner > path{
     visibility: hidden;
     transform: scale(0);
   }
+
   40% {
     visibility: visible;
     transform: scale(1);
   }
+
   60% {
     transform: translateX(20px);
   }
+
   100% {
     transform: translateX(0px);
   }
+}
+
+@keyframes line3 {
+  from {
+    visibility: hidden;
+    transform: scale(0);
+    d: path('M330 489.586H330.8');
+  }
+
+  to {
+    visibility: visible;
+    transform: scale(1);
+    d: path('M478.064 489.586H330.8');
+  }
+}
+
+@keyframes rec12{
+  0% {
+    visibility: hidden;
+    transform: scale(0);
+  }
+  40% {
+    visibility: visible;
+    transform: scale(1);
+  }
+  41% {
+    transform: translateY(-30px);
+  }
+
 }
