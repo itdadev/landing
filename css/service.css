@@ -9,7 +9,8 @@ body {
 .serviceAll {
   box-sizing: border-box;
   position: relative;
-  left: 0;
+  /* left: 0; */
+  left: -200vw;
   width: 100vw;
 }
 
