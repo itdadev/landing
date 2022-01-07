@@ -87,3 +87,12 @@ section h4 {
     margin-left: 40px;
   }
 }
+.thankyou_message {
+  margin: 20px auto;
+  text-align: center;
+}
+
+.thankyou_message h2 em{
+  font-weight: bold;
+  color: var(--point-color);
+}
