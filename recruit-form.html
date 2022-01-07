@@ -76,9 +76,9 @@
 
     <form 
     class="gform" 
-    action="https://script.google.com/macros/s/AKfycbwHMPc7WggGZFFBuLUp0hob0yJQgOVyzBiHFwCZCDVNllvjGsFpUVIVAjN8sSr5lWS8IQ/exec"
+    action="https://script.google.com/macros/s/AKfycbwb_n8SbL0BuvUZX_RmADwjSH9jHhqdvkF3CipfC6VH421fWQTKi65RrSaYZqZp9dNN/exec"
     method="POST"
-    data-email="yubin@itdadev.com"
+    data-email="yhklilly0305@gmail.com"
     >
       <ul>
         <li class="webFlex">
@@ -90,7 +90,6 @@
             <label for="phone">전화번호</label>
             <input name="phone" type="tel" id="phone" placeholder="전화번호">
           </div>
-
         </li>
         <li>
           <label for="email">이메일</label>
@@ -100,33 +99,33 @@
           <label>지원분야</label>
           <div>
             <p>
-              <input name="fe" type="radio" id="front" name="apply">
+              <input type="radio" id="front" value="front-end" name="apply">
               <label for="front">프론트</label>
             </p>
 
             <p>
-              <input name="des" type="radio" id="design" name="apply">
+              <input type="radio" id="design" name="apply" value="design">
               <label for="design">디자인</label>
             </p>
 
             <p>
-              <input name="hr" type="radio" id="hr" name="apply">
+              <input type="radio" id="hr" name="apply" value="human resources">
               <label for="hr">인사</label>
             </p>
           </div>
           <div>
             <p>
-              <input name="be" type="radio" id="be" name="apply">
+              <input type="radio" id="be" value="back-end" name="apply">
               <label for="be">백엔드</label>
             </p>
 
             <p>
-              <input name="plan" type="radio" id="plan" name="apply">
+              <input type="radio" id="plan" name="apply" value="planner">
               <label for="plan">기획</label>
             </p>
 
             <p>
-              <input name="ent" type="radio" id="business" name="apply">
+              <input type="radio" id="business" name="apply" value="business">
               <label for="business">경영</label>
               </>
           </div>
@@ -135,7 +134,7 @@
           <h6>첨부된 파일</h6>
           <input class="upload-name" value="파일선택" disabled="disabled">
           <label for="ex_filename">파일 첨부하기</label>
-          <input type="file" id="ex_filename" class="upload-hidden">
+          <input type="file" id="ex_filename" class="upload-hidden"  name="file" download>
         </li>
 
         <li>
@@ -144,7 +143,12 @@
         </li>
       </ul>
 
-      <button onclick="return confirm('Are you sure you want to rollback deletion of candidate table?')" type="submit">지원하기</button>
+      <button onclick="return confirm('양식을 제출합니다.')" type="submit">지원하기</button>
+
+      <div style="display:none" class="thankyou_message">
+        <h2><em>감사합니다! </em> 접수가 완료되었습니다. 곧 연락드리겠습니다.
+        </h2>
+      </div>
     </form>
   </section>
 
@@ -228,8 +232,9 @@
         });
     });
   </script>
-  <script data-cfasync="false" type="text/javascript"
-  src="https://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-server/master/form-submission-handler.js"></script>
+
+<script data-cfasync="false" type="text/javascript"
+src="https://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-server/master/form-submission-handler.js"></script>
 </body>
 
 </html>
