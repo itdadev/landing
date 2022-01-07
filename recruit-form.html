@@ -74,54 +74,59 @@
       잇다의 입사조건엔 필수조건이 없습니다!
     </p>
 
-    <form action="">
+    <form 
+    class="gform" 
+    action="https://script.google.com/macros/s/AKfycbwHMPc7WggGZFFBuLUp0hob0yJQgOVyzBiHFwCZCDVNllvjGsFpUVIVAjN8sSr5lWS8IQ/exec"
+    method="POST"
+    data-email="yubin@itdadev.com"
+    >
       <ul>
         <li class="webFlex">
           <div>
             <label for="name">이름</label>
-            <input type="text" id="name" placeholder="이름">
+            <input name="name" type="text" id="name" placeholder="이름">
           </div>
           <div>
             <label for="phone">전화번호</label>
-            <input type="tel" id="phone" placeholder="전화번호">
+            <input name="phone" type="tel" id="phone" placeholder="전화번호">
           </div>
 
         </li>
         <li>
           <label for="email">이메일</label>
-          <input type="email" id="email" placeholder="이메일">
+          <input name="email" type="email" id="email" placeholder="이메일">
         </li>
         <li class="radio">
           <label>지원분야</label>
           <div>
             <p>
-              <input type="radio" id="front" name="apply">
+              <input name="fe" type="radio" id="front" name="apply">
               <label for="front">프론트</label>
             </p>
 
             <p>
-              <input type="radio" id="design" name="apply">
+              <input name="des" type="radio" id="design" name="apply">
               <label for="design">디자인</label>
             </p>
 
             <p>
-              <input type="radio" id="hr" name="apply">
+              <input name="hr" type="radio" id="hr" name="apply">
               <label for="hr">인사</label>
             </p>
           </div>
           <div>
             <p>
-              <input type="radio" id="be" name="apply">
+              <input name="be" type="radio" id="be" name="apply">
               <label for="be">백엔드</label>
             </p>
 
             <p>
-              <input type="radio" id="plan" name="apply">
+              <input name="plan" type="radio" id="plan" name="apply">
               <label for="plan">기획</label>
             </p>
 
             <p>
-              <input type="radio" id="business" name="apply">
+              <input name="ent" type="radio" id="business" name="apply">
               <label for="business">경영</label>
               </>
           </div>
@@ -139,7 +144,7 @@
         </li>
       </ul>
 
-      <button type="submit">지원하기</button>
+      <button onclick="return confirm('Are you sure you want to rollback deletion of candidate table?')" type="submit">지원하기</button>
     </form>
   </section>
 
@@ -223,6 +228,8 @@
         });
     });
   </script>
+  <script data-cfasync="false" type="text/javascript"
+  src="https://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-server/master/form-submission-handler.js"></script>
 </body>
 
 </html>
