@@ -1,12 +1,26 @@
+main {
+  width: 100%;
+  height: 40vh;
+  display: flex;
+}
+
+@media (min-width: 1024px) {
+  main {
+    width: 100%;
+    height: 75vh;
+    display: flex;
+  }
+}
+
+
 main svg {
   width: 100%;
-  border: 1px solid blue;
+  height: 100%;
 }
 
 #main-banner>path,
 #main-banner>g {
   animation-fill-mode: both;
-  /* opacity: 0; */
 }
 
 #cir1 {
@@ -82,23 +96,46 @@ main svg {
   animation-delay: 1.4s;
 }
 
-#alphabet-d {
+#rec2 {
+  animation: moveUp 0.5s ease;
+  animation-delay: 1.5s;
+}
+
+#rec3 {
+  animation: moveUp 0.5s ease;
+  animation-delay: 2s;
+}
+
+#tri1,
+#tri2,
+#tri3,
+#alphabet-d,
+#alphabet-l3,
+#alphabet-e3  {
   visibility: visible;
 }
-
-#rec2 {
-  animation: moveUp 3s ease;
-  stroke: tomato;
+#rec1 {
+  animation: moveUp 0.8s ease;
+  animation-delay: 2.2s;
+}
+#rec9 {
+  animation: moveDown 0.8s ease;
+  animation-delay: 2.2s;
 }
 
-@keyframes moveUp {
-  from {
-    transform: translateY(0);
-  }
+#rec4 {
+  animation: moveDown 0.5s ease;
+  animation-delay: 2.8s;
+}
 
-  to {
-    transform: translateY(-100px);
-  }
+#rec5 {
+  animation: moveDown 0.5s ease;
+  animation-delay: 3.3s;
+}
+
+#rec6 {
+  animation: moveDown 0.5s ease;
+  animation-delay: 3.8s;
 }
 
 #alphabet-s,
@@ -203,27 +240,35 @@ main svg {
   animation-delay: 3.3s;
 }
 
+#rec7 {
+  animation: moveDown 0.3s ease;
+  animation-delay: 3.6s;
+  animation-fill-mode: forwards;
+}
+
+
+#rec8 {
+  animation: moveDown 0.3s ease;
+  animation-delay: 3.9s;
+  animation-fill-mode: forwards;
+}
+
 #alphabet-o {
-  animation: scale 0.3s ease;
+  animation: scale 0.2s ease;
   transform-origin: 87.5% 85%;
   animation-delay: 4.3s;
 }
 
 #alphabet-p2 {
-  animation: scale 0.3s ease;
+  animation: scale 0.2s ease;
   transform-origin: 92% 92%;
-  animation-delay: 4.6s;
+  animation-delay: 4.5s;
 }
 
 #line6 {
   visibility: hidden;
   animation: line6 0.8s ease;
   animation-delay: 3s;
-}
-
-@keyframes main-banner {
-
- 
 }
 
 @keyframes scale {
@@ -235,6 +280,26 @@ main svg {
   to {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+@keyframes moveUp {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-100px);
+  }
+}
+
+@keyframes moveDown {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(100px);
   }
 }
 
@@ -461,4 +526,17 @@ main svg {
     opacity: 1;
     transform: rotate(0);
   }
+}
+
+
+#rec1,
+#rec2,
+#rec3,
+#rec4,
+#rec5,
+#rec6,
+#rec7,
+#rec8,
+#rec9 {
+  animation-fill-mode: forwards;
 }
