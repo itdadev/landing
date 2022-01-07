@@ -120,6 +120,7 @@ form button {
   border: none;
   border-radius: 30px;
   color: white;
+  cursor: pointer;
 }
 
 @media (min-width: 1024px) {

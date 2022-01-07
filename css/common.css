@@ -73,7 +73,7 @@ section h4 {
   }
   
   section h2{
-    margin-top: 10rem;  
+    margin-top: 8rem;  
     margin-bottom: 24px;
     font-size: var(--fs-40);
   }
@@ -86,4 +86,13 @@ section h4 {
   .category h3 span{
     margin-left: 40px;
   }
+}
+.thankyou_message {
+  margin: 20px auto;
+  text-align: center;
+}
+
+.thankyou_message h2 em{
+  font-weight: bold;
+  color: var(--point-color);
 }

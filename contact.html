@@ -103,32 +103,42 @@
                 </div>
             </section>
 
-            <form action="">
+            <form class = "gform" method="POST" data-email="yhklilly0305@gmail.com"
+             action="https://script.google.com/macros/s/AKfycbyVIUjPxi-slXdo_5oUnXJUYoazc-ehzO0s_5R9JFGHhgWS4HsN-_kswTut9u1ks7zf/exec">
+
+              
                 <legend>How To Contact Us</legend>
                 <ul class="clear">
                     <li class="floatLeft">
                         <label for="name">이름</label>
-                        <input type="text" id="name" placeholder="이름">
+                        <input type="text" name="name" id="name" placeholder="이름" required>
                     </li>
                     <li class="floatRight">
                         <label for="phone">전화번호</label>
-                        <input type="tel" id="phone" placeholder="전화번호">
+                        <input type="tel" name="phone" id="phone" placeholder="전화번호" required>
                     </li>
                     <li>
                         <label for="email">이메일</label>
-                        <input type="email" id="email" placeholder="이메일">
+                        <input type="email" name="email" id="email" placeholder="이메일" required>
                     </li>
                     <li>
                         <label for="category">카테고리</label>
-                        <input type="text" id="category" placeholder="카테고리">
+                        <input type="text" name="category" id="category" placeholder="카테고리" required>
                     </li>
                     <li>
                         <label for="content">문의 내용</label>
                         <textarea name="content" id="content" cols="300" rows="10" placeholder="문의 내용"></textarea>
                     </li>
                 </ul>
+                <button class="button-success">
+                    <i class="fa fa-paper-plane"></i>&nbsp;Send</button>
 
-                <button type="submit">SEND</button>
+                <div style="display:none" class="thankyou_message">
+                    <h2><em>감사합니다! </em> 접수가 완료되었습니다. 곧 연락드리겠습니다.
+                    </h2>
+               </div>
+
+
             </form>
         </main>
     </div>
@@ -191,6 +201,11 @@
 
         </ul>
     </footer>
+
+    <script data-cfasync="false" type="text/javascript"
+src="https://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-server/master/form-submission-handler.js"></script>
+    <script data-cfasync="false" src="form-submission-handler.js"></script>
+
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/jquery-migrate-1.4.1.min.js"></script>
     <script src="js/common.js"></script>
