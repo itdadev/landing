@@ -221,33 +221,7 @@
   <script src="js/common.js"></script>
 
   <script>
-    function onOpen() {
-      SpreadsheetApp.getUi() // Or DocumentApp or SlidesApp or FormApp.
-        .createMenu('Upload File Tutorial')
-        .addItem('Attachment', 'openAttachmentDialog')
-        .addToUi();
-    }
-
-    function openAttachmentDialog() {
-      var html = HtmlService.createHtmlOutputFromFile('recruit-form');
-      SpreadsheetApp.getUi() // Or DocumentApp or SlidesApp or FormApp.
-        .showModalDialog(html, 'Html Title');
-    }
-
-
-    function saveFile(obj) {
-      var blob = Utilities.newBlob(Utilities.base64Decode(obj.data), obj.mimeType, obj.fileName);
-      var file = DriveApp.getFolderById("1oIY03HlDEUkl6HKZnirawCxMnRwqNZJG").createFile(blob);
-      var cellFormula = 'hyperlink("' + file.getUrl() + '";"' + file.getName() + '")';
-
-      var activeSheet = SpreadsheetApp.getActiveSheet();
-      var selection = activeSheet.getSelection();
-      var cell = selection.getCurrentCell();
-      cell.setFormula(cellFormula);
-
-      return file.getId();
-    }
-
+    
     function getFiles() {
       document.getElementById("uploadButton").disabled = true;
       const progressText = document.getElementById("progress");
