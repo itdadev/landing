@@ -68,7 +68,7 @@ form li.radio div label {
   margin: 0 0 0.5em;
 }
 
-form button {
+form input.apply {
   display: block;
   background: var(--point-color);
   width: 50%;
@@ -86,7 +86,7 @@ form button {
 .filebox {
   width: 100%;
 }
-
+/* 
 .filebox input[type="file"] {
   position: absolute;
   width: 1px;
@@ -96,7 +96,7 @@ form button {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
-}
+} */
 
 .filebox label {
   /* 파일 첨부 버튼 */
@@ -155,7 +155,7 @@ form button {
     order: 6;
   }
 
-  form button {
+  form input.apply {
     width: 20%;
     margin: 5rem auto;
     padding: 1.6rem 0;
