@@ -1,34 +1,41 @@
 const express = require("express");
+const bodyParser = require("body-parser");
+const fs = require('fs');
 // const res = require("express/lib/response");
 const app = express();
 const router = express.Router();
+app.use(bodyParser.urlencoded({ extended: true }));
 
 const path = require('path');
-
 // multer : image upload
 const multer = require('multer');
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, 'recruitImg/')
+    cb(null, 'recruitImg')
   },
   filename: (req, file, cb) => {
-    console.log(req.file);
+    console.log(file);
     cb(null, Date.now() + path.extname(file.originalname));
   }
 })
+
 const upload = multer({storage : storage});
 
 app.use(express.static('public'));
+
+app.get("/", (req, res) => {
+  res.sendFile(__dirname + "/public/index.html");
+});
 
 app.get("/recruit-form", (req, res) => {
   res.sendFile(__dirname + "/public/recruit-form.html");
 });
 
-app.post("/upload", upload.single('upload') ,(req, res) => {
+app.post("/upload", upload.single('newFile') ,(req, res) => {
+  const file = req.file;
   // res.send("Image Uploaded");
-  alert('image uploaded');
-  res.send('Uploaded! : ' + req.file); // object를 리턴함
+  console.log(file) // object를 리턴함
 });
 
 module.exports = router;
