@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Itda Contact Us</title>
+
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="css/common.css">
+
+    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=oh6f4evch1"></script>
+</head>
+
+<body>
+    <header class="mobileHeader">
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <a href="index.html" class="logo">
+            <img src="img/logo_white.png" alt="잇다 모바일 로고">
+        </a>
+        <nav>
+            <a href="index.html">
+                Home
+            </a>
+            <a href="about.html">
+                About Us
+            </a>
+            <a href="service.html">
+                Service
+            </a>
+            <a href="recruit.html">
+                Recruit
+            </a>
+            <a href="contact.html" class="active">
+                Contact Us
+            </a>
+        </nav>
+    </header>
+
+    <header class="webHeader">
+        <a href="index.html" class="logo">
+            <img src="img/logo.png" alt="잇다 웹 로고" class="webLogo">
+        </a>
+        <nav>
+            <a href="index.html">
+                Home
+            </a>
+            <a href="about.html">
+                About Us
+            </a>
+            <a href="service.html">
+                Service
+            </a>
+            <a href="recruit.html">
+                Recruit
+            </a>
+            <a href="contact.html" class="active">
+                Contact Us
+            </a>
+        </nav>
+    </header>
+
+    <div class="wrap">
+        <section class="contactWrap">
+            <h2>Contact Us</h2>
+            <div class="itdaPDF">
+                <a href="" download>
+                    <img src="img/download.png" alt="다운로드 아이콘">
+                    회사 소개서
+                </a>
+            </div>
+        </section>
+        <div class="mapSample">
+            <div id="map"></div>
+        </div>
+        <main class="contactMain">
+            <section>
+
+                <div class="infoWrap">
+                    <h4>Welcome</h4>
+
+                    <div class="contactInfo">
+                        <a href="mailto:Piotr@itdadev.com">
+                            <img src="img/email.png" alt="이메일 아이콘">
+                            Piotr@itdadev.com
+                        </a>
+                        <a href="tel:+82 000-0000-0000">
+                            <img src="img/call.png" alt="전화 아이콘">
+                            +82 000-0000-0000
+                        </a>
+                    </div>
+
+                    <address>
+                        서울특별시 강남구 강남대로 <br>
+                        94길 28 (강남역 12번 출구 도보 4분)
+                    </address>
+                </div>
+            </section>
+
+            <form class = "gform" method="POST" data-email="yhklilly0305@gmail.com"
+             action="https://script.google.com/macros/s/AKfycbyVIUjPxi-slXdo_5oUnXJUYoazc-ehzO0s_5R9JFGHhgWS4HsN-_kswTut9u1ks7zf/exec">
+
+              
+                <legend>How To Contact Us</legend>
+                <ul class="clear">
+                    <li class="floatLeft">
+                        <label for="name">이름</label>
+                        <input type="text" name="name" id="name" placeholder="이름" required>
+                    </li>
+                    <li class="floatRight">
+                        <label for="phone">전화번호</label>
+                        <input type="tel" name="phone" id="phone" placeholder="전화번호" required>
+                    </li>
+                    <li>
+                        <label for="email">이메일</label>
+                        <input type="email" name="email" id="email" placeholder="이메일" required>
+                    </li>
+                    <li>
+                        <label for="category">카테고리</label>
+                        <input type="text" name="category" id="category" placeholder="카테고리" required>
+                    </li>
+                    <li>
+                        <label for="content">문의 내용</label>
+                        <textarea name="content" id="content" cols="300" rows="10" placeholder="문의 내용"></textarea>
+                    </li>
+                </ul>
+                <button class="button-success" onclick="return confirm('양식을 제출합니다.')">
+                    <i class="fa fa-paper-plane"></i>&nbsp;Send</button>
+
+                <div style="display:none" class="thankyou_message">
+                    <h2><em>감사합니다! </em> 접수가 완료되었습니다. 곧 연락드리겠습니다.
+                    </h2>
+               </div>
+
+
+            </form>
+        </main>
+    </div>
+
+
+
+    <footer>
+        <div class="webFooterLogo">
+            <img src="img/logo_white.png" alt="잇다 흰색 로고">
+        </div>
+        <ul>
+            <li>
+                <img src="img/location_on.png" alt="회사 위치 아이콘">
+                <p>
+                    서울특별시 강남구 강남대로 94길 28 <br>
+                    (강남역 12번 출구 도보 4분)
+                </p>
+            </li>
+            <li class="information">
+                <div class="company">
+                    <h1>Company</h1>
+                    <a href="service.html">Service</a>
+                    <a href="recruit.html">Recruit</a>
+                    <a href="contact.html">Contact Us</a>
+                </div>
+                <div class="contactUs">
+                    <h1>Contact Us</h1>
+                    <a href="mailto:Piotr@itdadev.com">
+                        <img src="img/email.png" alt="이메일 아이콘">
+                        Piotr@itdadev.com
+                    </a>
+                    <a href="tel:+82 000-0000-0000">
+                        <img src="img/call.png" alt="전화 아이콘">
+                        +82 000-0000-0000
+
+                    </a>
+                </div>
+                <div class="service">
+                    <h1>Service</h1>
+                    <a href="service.html">기획</a>
+                    <a href="service.html">디자인</a>
+                    <a href="service.html">개발</a>
+                </div>
+
+                <div class="serviceWeb">
+                    <h1>Service</h1>
+                    <p>기획</p>
+                    <p>앱 디자인</p>
+                    <p>웹 디자인</p>
+                    <p>개발 / 퍼블리싱</p>
+                </div>
+            </li>
+
+            <li class="companyInfo">
+                <p>사업자 등록번호: 879-81-021221 |</p>
+                <p>대표이사 : 윤동준 |</p>
+                <p>주소 : 서울특별시 강남구 강남대로94길 28, 5층 506호 |</p>
+                <p>대표전화 : 00-0000-0000 |</p>
+            </li>
+
+        </ul>
+    </footer>
+
+    <script data-cfasync="false" type="text/javascript"
+src="https://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-server/master/form-submission-handler.js"></script>
+    <script data-cfasync="false" src="form-submission-handler.js"></script>
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/jquery-migrate-1.4.1.min.js"></script>
+    <script src="js/common.js"></script>
+    <script>
+        var HOME_PATH = window.HOME_PATH || '.';
+    
+        var cityhall = new naver.maps.LatLng(37.499617546951285, 127.02959009953081),
+          map = new naver.maps.Map('map', {
+            center: cityhall.destinationPoint(0, 500),
+            zoom: 15
+          }),
+          marker = new naver.maps.Marker({
+            map: map,
+            position: cityhall
+          });
+    
+        var contentString = [
+          '<div class="iw_inner">',
+          '   <h3>잇다</h3>',
+          '   <p>서울 강남구 강남대로94길 28 유니언타운 506호<br />',
+          '       <img src="' +
+          'img/logo.png" width="55" height="auto" alt="잇다" class="thumb" /><br />',
+          '       06134<br />',
+          '       <a href="https://www.itdadev.com" target="_blank">https://www.itdadev.com/</a>',
+          '   </p>',
+          '</div>'
+        ].join('');
+    
+        var infowindow = new naver.maps.InfoWindow({
+          content: contentString
+        });
+    
+        naver.maps.Event.addListener(marker, "click", function (e) {
+          if (infowindow.getMap()) {
+            infowindow.close();
+          } else {
+            infowindow.open(map, marker);
+          }
+        });
+    
+        infowindow.open(map, marker);
+      </script>
+
+    <script>
+        $(document).ready(function () {
+            if (window.innerWidth > 1024) {
+                $("label[for='name']").text('Name');
+                $("#name").attr('placeholder', 'Name');
+
+                $("label[for='phone']").text('Phone');
+                $("#phone").attr('placeholder', 'Phone');
+
+                $("label[for='email']").text('Email');
+                $("#email").attr('placeholder', 'Email');
+
+                $("label[for='category']").text('Category');
+                $("#category").attr('placeholder', 'What');
+
+                $("label[for='content']").text('Message');
+                $("#content").attr('placeholder', 'Start typing here');
+
+
+            } else {
+                $("label[for='name']").text('이름');
+
+                $("label[for='phone']").text('전화번호');
+
+                $("label[for='email']").text('이메일');
+
+                $("label[for='category']").text('카테고리');
+
+                $("label[for='content']").text('문의 내용');
+            }
+
+        }); // document.ready 끝
+
+        $(window).resize(function () {
+            if (window.innerWidth > 1024) {
+                //웹 label & input - 영어로
+                $("label[for='name']").text('Name');
+                $("#name").attr('placeholder', 'Name');
+
+                $("label[for='phone']").text('Phone');
+                $("#phone").attr('placeholder', 'Phone');
+
+                $("label[for='email']").text('Email');
+                $("#email").attr('placeholder', 'Email');
+
+                $("label[for='category']").text('Category');
+                $("#category").attr('placeholder', 'What');
+
+                $("label[for='content']").text('Message');
+                $("#content").attr('placeholder', 'Start typing here');
+
+            } else {
+
+                // 모바일 placeholder - 한글로
+                $("label[for='name']").text('이름');
+                $("#name").attr( 'placeholder', '이름' );
+
+                $("label[for='phone']").text('전화번호');
+                $("#phone").attr( 'placeholder', '전화번호' );
+
+                $("label[for='email']").text('이메일');
+                $("#email").attr( 'placeholder', '이메일' );
+
+                $("label[for='category']").text('카테고리');
+                $("#category").attr( 'placeholder', '카테고리' );
+
+                $("label[for='content']").text('문의 내용');
+                $("#content").attr( 'placeholder', '문의 내용' );
+
+            }
+
+        }).resize();
+    </script>
+</body>
+
+</html>

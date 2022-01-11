@@ -1,0 +1,186 @@
+.recruitForm>p {
+  font-size: var(--fs-18);
+  padding: 3rem 0;
+  border-bottom: 2px solid var(--point-color);
+}
+
+form {
+  display: block;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+  font-size: var(--fs-18);
+}
+
+form li label {
+  display: block;
+  color: var(--grey-three);
+  margin-bottom: 1.8rem;
+  margin-top: 2.4rem;
+  font-weight: 700;
+}
+
+form li input[type=text],
+form li input[type=tel],
+form li input[type=email],
+textarea {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: 1px solid var(--light-grey);
+  outline: none;
+  color: var(--base-color);
+  font-family: inherit;
+  resize: none;
+  transition: all 0.3s;
+}
+
+form li input:focus,
+textarea:focus {
+  border-color: var(--point-color);
+}
+
+form li input:focus::placeholder,
+textarea:focus::placeholder {
+  opacity: 0;
+}
+
+form li input::placeholder,
+textarea::placeholder {
+  opacity: 1;
+  color: var(--grey-color);
+  transition: all 0.3s;
+}
+
+form li.radio div {
+  display: flex;
+  justify-content: space-between;
+}
+
+form li.radio div label,
+form li.radio div input {
+  display: inline-block;
+}
+
+form li.radio div label {
+  font-weight: 400;
+  margin: 0 0 0.5em;
+}
+
+form input.apply {
+  display: block;
+  background: var(--point-color);
+  width: 50%;
+  max-width: 160px;
+  margin: 3rem auto;
+  padding: 3px 0;
+  border: none;
+  border-radius: 30px;
+  font-size: inherit;
+  color: white;
+}
+
+
+/* 첨부파일 커스텀 */
+.filebox {
+  width: 100%;
+}
+/* 
+.filebox input[type="file"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+} */
+
+.filebox label {
+  /* 파일 첨부 버튼 */
+  display: block;
+  width: 60%;
+  max-width: 180px;
+  margin: 2rem auto;
+  padding: 3px 0;
+  text-align: center;
+  color: white;
+  font-size: inherit;
+  font-weight: 400;
+  line-height: normal;
+  background-color: var(--point-color);
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.filebox .upload-name {
+  display: inline-block;
+  width: 100%;
+  padding: .5em 0;
+  /* label의 패딩값과 일치 */
+  font-size: var(--fs-16);
+  font-family: inherit;
+  color: var(--grey-color);
+  line-height: normal;
+  vertical-align: middle;
+  border: none;
+  background-color: white;
+  -webkit-appearance: none;
+  /* 네이티브 외형 감추기 */
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.filebox h6 {
+  margin-top: 2.4rem;
+  font-weight: 700;
+}
+
+@media (min-width: 1024px) {
+  .wrap.recruitForm {
+    padding: 0 30%;
+  }
+
+  form {
+    flex: 2;
+    margin-top: 0;
+  }
+  form ul{
+    display: flex;
+    flex-direction: column;
+  }
+  form ul li:nth-last-child(2){
+    order: 6;
+  }
+
+  form input.apply {
+    width: 20%;
+    margin: 5rem auto;
+    padding: 1.6rem 0;
+    font-size: var(--fs-16);
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  .filebox label {
+    /* 파일 첨부 버튼 */
+    float: right;
+    width: 30%;
+    margin: 2rem 0;
+    padding: 1.6rem 0;
+    font-size: var(--fs-16);
+    border-radius: 8px;
+  }
+  form ul li.webFlex {
+    display: flex;
+  }
+  form ul li.webFlex div{
+    flex:1;
+  }
+  form ul li.webFlex div:first-child {
+    margin-right: 16px;
+  }
+}
+

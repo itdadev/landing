@@ -1,0 +1,98 @@
+@import url(./reset.css);
+@import url(./header.css);
+@import url(./footer.css);
+
+:root {
+  /* font sizes */
+  --fs-12: 1.2rem;
+  --fs-14: 1.4rem;
+  --fs-15: 1.5rem;
+  --fs-16: 1.6rem;
+  --fs-18: 1.8rem;
+  --fs-20: 2rem;
+  --fs-24: 2.4rem;
+  --fs-32: 3.2rem;
+  --fs-40: 4rem;
+  --fs-50: 5rem;
+  --fs-160: 16rem;
+  --point-color: #5F69DC;
+  --input-color: #A0BCF8;
+
+  --base-color:#1a1a1a;
+  --grey-color: #707070;
+  --grey-three: #333333;
+  --grey-six: #666666;
+
+  --light-grey: #E0DEDD;
+  --grey-f1: #F1F1F1;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+.wrap{
+  box-sizing: border-box;
+  height: auto;
+  margin: 6rem 0 0;
+  padding: 0 10%;
+}
+
+section h2{
+  font-size: var(--fs-24);
+  color: var(--grey-color);
+  font-weight: 700;
+  text-align: center;
+  line-height: 64px;
+}
+
+section h3 {
+  font-size: var(--fs-15);
+  color: var(--grey-color);
+  font-weight: 500;
+  text-align: center;
+}
+
+section h4 {
+  font-size: var(--fs-18);
+  color: var(--base-color);
+  font-weight: 700;
+}
+
+.flex{
+  display: flex;
+}
+
+@media (min-width: 1024px) {
+  .wrap {
+    box-sizing: border-box;
+    height: auto;
+    margin: 0;
+    padding: 0 15%;
+  }
+  
+  section h2{
+    margin-top: 8rem;  
+    margin-bottom: 24px;
+    font-size: var(--fs-40);
+  }
+
+  section h3 {
+    text-align: right;
+    font-size: var(--fs-16);
+  }
+
+  .category h3 span{
+    margin-left: 40px;
+  }
+}
+.thankyou_message {
+  margin: 20px auto;
+  text-align: center;
+}
+
+.thankyou_message h2 em{
+  font-weight: bold;
+  color: var(--point-color);
+}

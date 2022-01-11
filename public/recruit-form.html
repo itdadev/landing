@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Itda Recruit Form</title>
+
+
+  <link rel="stylesheet" href="/css/recruit-form.css">
+  <link rel="stylesheet" href="/css/common.css">
+</head>
+
+<body>
+  <header class="mobileHeader">
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <a href="index.html" class="logo">
+      <img src="img/logo_white.png" alt="잇다 모바일 로고">
+    </a>
+    <nav>
+      <a href="index.html">
+        Home
+      </a>
+      <a href="about.html">
+        About Us
+      </a>
+      <a href="service.html">
+        Service
+      </a>
+      <a href="recruit.html" class="active">
+        Recruit
+      </a>
+      <a href="contact.html">
+        Contact Us
+      </a>
+    </nav>
+  </header>
+
+  <header class="webHeader">
+    <a href="index.html" class="logo">
+      <img src="img/logo.png" alt="잇다 웹 로고" class="webLogo">
+    </a>
+    <nav>
+      <a href="index.html">
+        Home
+      </a>
+      <a href="about.html">
+        About Us
+      </a>
+      <a href="service.html">
+        Service
+      </a>
+      <a href="recruit.html" class="active">
+        Recruit
+      </a>
+      <a href="contact.html">
+        Contact Us
+      </a>
+    </nav>
+  </header>
+
+
+  <section class="wrap recruitForm">
+    <h2>Recruit</h2>
+
+    <p>
+      자유 양식의 입사 지원서를 파일 또는 text 형태로 보내주세요!
+      잇다의 입사조건엔 필수조건이 없습니다!
+    </p>
+
+      <!-- action= "send" -->
+    <form class="gform recruitForm"
+      action="send"
+      method="POST" enctype="multipart/form-data" id="form">
+      <ul>
+        <li class="webFlex">
+          <div>
+            <label for="name">이름</label>
+            <input name="name" type="text" id="name" placeholder="이름">
+          </div>
+          <div>
+            <label for="phone">전화번호</label>
+            <input name="phone" type="tel" id="phone" placeholder="전화번호">
+          </div>
+        </li>
+        <li>
+          <label for="email">이메일</label>
+          <input name="email" type="email" id="email" placeholder="이메일">
+        </li>
+        <li class="radio">
+          <label>지원분야</label>
+          <div>
+            <p>
+              <input type="radio" id="front" value="front-end" name="apply">
+              <label for="front">프론트</label>
+            </p>
+
+            <p>
+              <input type="radio" id="design" name="apply" value="design">
+              <label for="design">디자인</label>
+            </p>
+
+            <p>
+              <input type="radio" id="hr" name="apply" value="human resources">
+              <label for="hr">인사</label>
+            </p>
+          </div>
+          <div>
+            <p>
+              <input type="radio" id="be" value="back-end" name="apply">
+              <label for="be">백엔드</label>
+            </p>
+
+            <p>
+              <input type="radio" id="plan" name="apply" value="planner">
+              <label for="plan">기획</label>
+            </p>
+
+            <p>
+              <input type="radio" id="business" name="apply" value="business">
+              <label for="business">경영</label>
+            </p>
+          </div>
+        </li>
+        <li class="filebox clear">
+          <h6>첨부된 파일</h6>
+          <!-- <input class="upload-name" value="파일선택" disabled="disabled"> -->
+          <!-- <label for="file"">파일 첨부하기</label> -->
+          <!-- <input type="file" id="file" class="upload-hidden" name="file" onchange="saveFile(this)"> -->
+
+          <!-- <input type="file" name="upload" id="files" multiple/> -->
+          <input type="file" name="image" id="files"  accept="image/jpeg, image/png, .pdf, .doc > 
+          <!-- I expect to up load only one file -->
+          <br><br>
+          <div id="progress"> </div>
+
+        </li>
+
+        <li>
+          <label for="content">상세 내용</label>
+          <textarea name="content" id="content" cols="300" rows="10" placeholder="지원 내용을 서술하세요."></textarea>
+        </li>
+      </ul>
+
+      <input class="apply" type="submit" value="지원하기"></input>
+      <!-- onclick="return confirm('양식을 제출합니다.')" -->
+     
+    </form>
+  </section>
+
+
+  <footer>
+    <div class="webFooterLogo">
+      <img src="img/logo_white.png" alt="잇다 흰색 로고">
+    </div>
+    <ul>
+      <li>
+        <img src="img/location_on.png" alt="회사 위치 아이콘">
+        <p>
+          서울특별시 강남구 강남대로 94길 28 <br>
+          (강남역 12번 출구 도보 4분)
+        </p>
+      </li>
+      <li class="information">
+        <div class="company">
+          <h1>Company</h1>
+          <a href="service.html">Service</a>
+          <a href="recruit.html">Recruit</a>
+          <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="contactUs">
+          <h1>Contact Us</h1>
+          <a href="mailto:Piotr@itdadev.com">
+            <img src="img/email.png" alt="이메일 아이콘">
+            Piotr@itdadev.com
+          </a>
+          <a href="tel:+82 000-0000-0000">
+            <img src="img/call.png" alt="전화 아이콘">
+            +82 000-0000-0000
+
+          </a>
+        </div>
+        <div class="service">
+          <h1>Service</h1>
+          <a href="service.html">기획</a>
+          <a href="service.html">디자인</a>
+          <a href="service.html">개발</a>
+        </div>
+
+        <div class="serviceWeb">
+          <h1>Service</h1>
+          <p>기획</p>
+          <p>앱 디자인</p>
+          <p>웹 디자인</p>
+          <p>개발 / 퍼블리싱</p>
+        </div>
+      </li>
+
+      <li class="companyInfo">
+        <p>사업자 등록번호: 879-81-021221 |</p>
+        <p>대표이사 : 윤동준 |</p>
+        <p>주소 : 서울특별시 강남구 강남대로94길 28, 5층 506호 |</p>
+        <p>대표전화 : 00-0000-0000 |</p>
+      </li>
+
+    </ul>
+  </footer>
+
+  <script src="/js/app.js"></script>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/jquery-migrate-1.4.1.min.js"></script>
+  <script src="js/common.js"></script>
+
+  <script>
+    function getFiles() {
+      document.getElementById("uploadButton").disabled = true;
+      const progressText = document.getElementById("progress");
+      const f = document.getElementById('files');
+      var uploadCompletedCount = 0;
+      progressText.innerHTML = "Uploading file " + (uploadCompletedCount + 1) + "/" + [...f.files].length + "";
+      [...f.files].forEach((file, i) => {
+        const fr = new FileReader();
+        fr.onload = (e) => {
+          const data = e.target.result.split(",");
+          const obj = {
+            fileName: f.files[i].name,
+            mimeType: data[0].match(/:(\w.+);/)[1],
+            data: data[1]
+          };
+          google.script.run.withSuccessHandler((id) => {
+            uploadCompletedCount++;
+            progressText.innerHTML = "Upload completed";
+            if (uploadCompletedCount >= [...f.files].length) {
+              google.script.host.close();
+            } else {
+              progressText.innerHTML = "Uploading file " + (uploadCompletedCount + 1) + "/" + [...f.files]
+                .length + "";
+            }
+          }).saveFile(obj);
+        }
+        fr.readAsDataURL(file);
+      });
+    }
+  </script>
+
+  <script>
+    // $(document).ready(function () {
+    //   var fileTarget = $('.filebox .upload-hidden');
+    //   fileTarget.on('change',
+    //     function () {
+    //       // 값이 변경되면 
+    //       if (window.FileReader) {
+    //         // modern browser 
+    //         var filename = $(this)[0].files[0].name;
+    //       } else {
+    //         // old IE 
+    //         var filename = $(this).val().split('/').pop().split('\\').pop();
+    //         // 파일명만 추출 
+    //       }
+    //       // 추출한 파일명 삽입 
+    //       $(this).siblings('.upload-name').val(filename);
+    //     });
+    // });
+  </script>
+
+  <script data-cfasync="false" type="text/javascript"
+    src="https://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-server/master/form-submission-handler.js">
+  </script>
+</body>
+
+</html>
