@@ -75,8 +75,8 @@
     </p>
 
       <!-- action= "send" -->
-    <form class="gform recruitForm"
-      action="/upload"
+    <form 
+      action="/recruit-form.html"
       method="POST" enctype="multipart/form-data" id="form">
       <ul>
         <li class="webFlex">
@@ -130,13 +130,7 @@
         </li>
         <li class="filebox clear">
           <h6>첨부된 파일</h6>
-          <!-- <input class="upload-name" value="파일선택" disabled="disabled"> -->
-          <!-- <label for="file"">파일 첨부하기</label> -->
-          <!-- <input type="file" id="file" class="upload-hidden" name="file" onchange="saveFile(this)"> -->
-
-          <!-- <input type="file" name="upload" id="files" multiple/> -->
-          <input type="file" name="newFile" id="files"  accept="image/jpeg, image/png, .pdf, .doc > 
-          <!-- I expect to up load only one file -->
+          <input type="file" name="image" id="files"> 
           <br><br>
           <div id="progress"> </div>
 
