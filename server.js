@@ -1,20 +1,22 @@
 const express = require("express");
-const res = require("express/lib/response");
+// const res = require("express/lib/response");
 const app = express();
+const router = express.Router();
+
 const path = require('path');
 
 // multer : image upload
 const multer = require('multer');
+
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, 'recruitImg')
+    cb(null, 'recruitImg/')
   },
   filename: (req, file, cb) => {
-    console.log(file);
+    console.log(req.file);
     cb(null, Date.now() + path.extname(file.originalname));
   }
 })
-
 const upload = multer({storage : storage});
 
 app.use(express.static('public'));
@@ -23,11 +25,13 @@ app.get("/recruit-form", (req, res) => {
   res.sendFile(__dirname + "/public/recruit-form.html");
 });
 
-app.post("/upload", upload.single('image') ,(req, res) => {
-  res.send("Image Uploaded");
+app.post("/upload", upload.single('upload') ,(req, res) => {
+  // res.send("Image Uploaded");
+  alert('image uploaded');
+  res.send('Uploaded! : ' + req.file); // object를 리턴함
 });
 
-
+module.exports = router;
 
 
 // const nodemailer = require('nodemailer');
