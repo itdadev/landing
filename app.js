@@ -46,7 +46,7 @@ const storage = multer.diskStorage({
   }
 });
 
-const upload = multer({storage: storage, limits: { fileSize: 10 * 1024 * 1024 }}).single('image');
+const upload = multer({storage: storage, limits: { fileSize: 100 * 1024 * 1024 }}).single('image');
 
 
 app.post("/requst-form.html", (req, res) => {
@@ -54,7 +54,7 @@ app.post("/requst-form.html", (req, res) => {
   upload(req, res, function(err){
     if(err){
       console.log(err)
-      return res.end("Please check your file size (maximum: 100MB)")
+      return res.end("Something went wrong!")
     }else{
       name = req.body.name
       phone = req.body.phone
@@ -118,4 +118,55 @@ app.post("/requst-form.html", (req, res) => {
     }
   })
 
+});
+
+
+app.post("/contact.html", (req, res) => {
+  upload(req, res, function(err){
+    if(err){
+      console.log(err)
+      return res.end("Something went wrong!")
+    }else{
+      name = req.body.name
+      phone = req.body.phone
+      email = req.body.email
+      category = req.body.category
+      content = req.body.content
+
+      var transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+          user: 'yhklilly0305@gmail.com',
+          pass: 'dbghkrud0305'
+        }
+      })
+      const output = `
+        <p>새로운 문의 메일이 도착했습니다.</p>
+        <h3>문의자 정보</h3>
+        <ul style="list-style: none;">
+          <li style="list-style: none;">이름: ${req.body.name}</li>
+          <li style="list-style: none;">전화번호: ${req.body.phone}</li>
+          <li style="list-style: none;">이메일: ${req.body.email}</li>
+          <li style="list-style: none;">카테고리: ${req.body.category}</li>
+        </ul>
+        <h3>문의 내용</h3>
+        <p>${req.body.content}</p>
+        `
+      
+      var mailOptions = {
+        from: req.body.email,
+        to: 'yhklilly0305@gmail.com',
+        subject: '문의 메일 from ' + req.body.name,
+        html: output,
+      }
+
+      transporter.sendMail(mailOptions, function(err,info){
+        if(err){
+          console.log(err)
+        }else{
+          res.send("<script>alert('문의해주셔서 감사합니다! 곧 연락드리겠습니다.');location.href='/contact.html';</script>");
+        }
+      })
+    }
+  })
 });

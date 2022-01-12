@@ -131,11 +131,9 @@
         </li>
         <li class="filebox clear">
           <h6>첨부된 파일</h6>
-          <!-- <input class="upload-name" value="파일선택" disabled="disabled"> -->
-          <!-- <label for="file"">파일 첨부하기</label> -->
-          <!-- <input type="file" id="file" class="upload-hidden" name="file" onchange="saveFile(this)"> -->
-
-          <input type="file" name="image" id="files" accept="image/jpeg, image/png, .pdf, .doc"> 
+          <input class="upload-name" value="파일선택" disabled="disabled">
+          <label for="file">파일 첨부하기</label>
+          <input type="file" name="image" class="upload-hidden" id="file" accept="image/jpeg, image/png, .pdf, .doc"> 
         </li>
 
         <li>
@@ -213,23 +211,23 @@
 
 
   <script>
-    // $(document).ready(function () {
-    //   var fileTarget = $('.filebox .upload-hidden');
-    //   fileTarget.on('change',
-    //     function () {
-    //       // 값이 변경되면 
-    //       if (window.FileReader) {
-    //         // modern browser 
-    //         var filename = $(this)[0].files[0].name;
-    //       } else {
-    //         // old IE 
-    //         var filename = $(this).val().split('/').pop().split('\\').pop();
-    //         // 파일명만 추출 
-    //       }
-    //       // 추출한 파일명 삽입 
-    //       $(this).siblings('.upload-name').val(filename);
-    //     });
-    // });
+    $(document).ready(function () {
+      var fileTarget = $('.filebox .upload-hidden');
+      fileTarget.on('change',
+        function () {
+          // 값이 변경되면 
+          if (window.FileReader) {
+            // modern browser 
+            var filename = $(this)[0].files[0].name;
+          } else {
+            // old IE 
+            var filename = $(this).val().split('/').pop().split('\\').pop();
+            // 파일명만 추출 
+          }
+          // 추출한 파일명 삽입 
+          $(this).siblings('.upload-name').val(filename);
+        });
+    });
   </script>
 
   <script data-cfasync="false" type="text/javascript"

@@ -81,7 +81,6 @@
         </div>
         <main class="contactMain">
             <section>
-
                 <div class="infoWrap">
                     <h4>Welcome</h4>
 
@@ -103,10 +102,7 @@
                 </div>
             </section>
 
-            <form class = "gform" method="POST" data-email="yhklilly0305@gmail.com"
-             action="https://script.google.com/macros/s/AKfycbyVIUjPxi-slXdo_5oUnXJUYoazc-ehzO0s_5R9JFGHhgWS4HsN-_kswTut9u1ks7zf/exec">
-
-              
+            <form method="POST" action="/contact.html">
                 <legend>How To Contact Us</legend>
                 <ul class="clear">
                     <li class="floatLeft">
@@ -131,19 +127,10 @@
                     </li>
                 </ul>
                 <button class="button-success" onclick="return confirm('양식을 제출합니다.')">
-                    <i class="fa fa-paper-plane"></i>&nbsp;Send</button>
-
-                <div style="display:none" class="thankyou_message">
-                    <h2><em>감사합니다! </em> 접수가 완료되었습니다. 곧 연락드리겠습니다.
-                    </h2>
-               </div>
-
-
             </form>
+
         </main>
     </div>
-
-
 
     <footer>
         <div class="webFooterLogo">
@@ -202,52 +189,9 @@
         </ul>
     </footer>
 
-    <script data-cfasync="false" type="text/javascript"
-src="https://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-server/master/form-submission-handler.js"></script>
-    <script data-cfasync="false" src="form-submission-handler.js"></script>
-
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/jquery-migrate-1.4.1.min.js"></script>
     <script src="js/common.js"></script>
-    <script>
-        var HOME_PATH = window.HOME_PATH || '.';
-    
-        var cityhall = new naver.maps.LatLng(37.499617546951285, 127.02959009953081),
-          map = new naver.maps.Map('map', {
-            center: cityhall.destinationPoint(0, 500),
-            zoom: 15
-          }),
-          marker = new naver.maps.Marker({
-            map: map,
-            position: cityhall
-          });
-    
-        var contentString = [
-          '<div class="iw_inner">',
-          '   <h3>잇다</h3>',
-          '   <p>서울 강남구 강남대로94길 28 유니언타운 506호<br />',
-          '       <img src="' +
-          'img/logo.png" width="55" height="auto" alt="잇다" class="thumb" /><br />',
-          '       06134<br />',
-          '       <a href="https://www.itdadev.com" target="_blank">https://www.itdadev.com/</a>',
-          '   </p>',
-          '</div>'
-        ].join('');
-    
-        var infowindow = new naver.maps.InfoWindow({
-          content: contentString
-        });
-    
-        naver.maps.Event.addListener(marker, "click", function (e) {
-          if (infowindow.getMap()) {
-            infowindow.close();
-          } else {
-            infowindow.open(map, marker);
-          }
-        });
-    
-        infowindow.open(map, marker);
-      </script>
 
     <script>
         $(document).ready(function () {

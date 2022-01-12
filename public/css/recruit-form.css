@@ -86,7 +86,7 @@ form input.apply {
 .filebox {
   width: 100%;
 }
-/* 
+
 .filebox input[type="file"] {
   position: absolute;
   width: 1px;
@@ -96,7 +96,7 @@ form input.apply {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
-} */
+}
 
 .filebox label {
   /* 파일 첨부 버튼 */
