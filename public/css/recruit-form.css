@@ -133,11 +133,36 @@ form input.apply {
   appearance: none;
 }
 
-.filebox h6 {
+.filebox>div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   margin-top: 2.4rem;
+  margin-bottom: 2rem;
+}
+
+.filebox h6 {
+  margin-right: 20px;
   font-weight: 700;
 }
 
+.imgInfo{
+  display: flex;
+  align-items: center;
+  font-size: var(--fs-14);
+  color: var(--grey-color);
+}
+
+.imgInfo img {
+  vertical-align: middle;
+  width: 18px;
+  opacity: 0.4;
+  margin-right: 5px;
+}
+
+.imgInfo strong{
+  font-weight: 700;
+}
 @media (min-width: 1024px) {
   .wrap.recruitForm {
     padding: 0 30%;

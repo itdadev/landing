@@ -1,3 +1,13 @@
+$(window).scroll(function () {
+	var scroll = $(document).scrollTop();
+	console.log(scroll);
+
+  if(scroll == 0) {
+    $('.mobileHeader').css("opacity","1")
+  }else{
+    $('.mobileHeader').css("opacity","0")
+  }
+});
 
 $(document).ready(function () {
   $(".mobileHeader .hamburger").click(function () {
