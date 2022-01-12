@@ -20,12 +20,6 @@ app.get("/", (req, res) => {
   res.sendFile(__dirname + "/public/index.html");
 });
 
-// app.get("/recruit-form.html", (req, res) => {
-//   res.sendFile(__dirname + "/public/recruit-form.html");
-// });
-
-
-
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
 });
@@ -46,7 +40,10 @@ const storage = multer.diskStorage({
   }
 });
 
-const upload = multer({storage: storage, limits: { fileSize: 100 * 1024 * 1024 }}).single('image');
+const upload = multer({
+  storage: storage, 
+  limits: { fileSize: 100 * 1024 * 1024 }
+}).single('image');
 
 
 app.post("/requst-form.html", (req, res) => {

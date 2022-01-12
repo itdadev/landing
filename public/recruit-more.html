@@ -67,11 +67,11 @@
   <section class="recruitMore">
     <h2>채용내용</h2>
 
-    <a href="recruit-form.html">지원하기</a>
+    <a href="" class="passurl">지원하기</a>
     <figure class="recruitImg"> 
       <img src="img/recruit.jpg" alt="지원 공고 이미지">
     </figure>
-    <a href="recruit-form.html">지원하기</a>
+    <a href="" class="passurl">지원하기</a>
   </section>
   <footer>
     <div class="webFooterLogo">
@@ -133,6 +133,17 @@
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/jquery-migrate-1.4.1.min.js"></script>
   <script src="js/common.js"></script>
+
+  <script>
+    const receivedData = location.href.split('?')[1];
+    console.log(receivedData); // data
+
+    const passurl = document.querySelector('.passurl');
+    passurl.addEventListener('click', () => {
+
+      passurl.href = `recruit-form.html?${receivedData}`;
+    });
+  </script>
 </body>
 
 </html>

@@ -74,11 +74,9 @@
       잇다의 입사조건엔 필수조건이 없습니다!
     </p>
 
-      <!-- action= "send" -->
-      <!-- class="gform recruitForm" -->
-    <form 
-      action="/requst-form.html"
-      method="POST" enctype="multipart/form-data" id="form">
+    <!-- action= "send" -->
+    <!-- class="gform recruitForm" -->
+    <form action="/requst-form.html" method="POST" enctype="multipart/form-data" id="form">
       <ul>
         <li class="webFlex">
           <div>
@@ -98,33 +96,33 @@
           <label>지원분야</label>
           <div>
             <p>
-              <input type="radio" id="front" value="front-end" name="apply">
+              <input type="radio" id="front" name="apply" value="프론트엔드">
               <label for="front">프론트</label>
             </p>
 
             <p>
-              <input type="radio" id="design" name="apply" value="design">
-              <label for="design">디자인</label>
+              <input type="radio" id="designer" name="apply" value="디자이너">
+              <label for="designer">디자인</label>
             </p>
 
             <p>
-              <input type="radio" id="hr" name="apply" value="human resources">
+              <input type="radio" id="hr" name="apply" value="인사">
               <label for="hr">인사</label>
             </p>
           </div>
           <div>
             <p>
-              <input type="radio" id="be" value="back-end" name="apply">
-              <label for="be">백엔드</label>
+              <input type="radio" id="back" name="apply" value="백엔드">
+              <label for="back">백엔드</label>
             </p>
 
             <p>
-              <input type="radio" id="plan" name="apply" value="planner">
-              <label for="plan">기획</label>
+              <input type="radio" id="planner" name="apply" value="기획">
+              <label for="planner">기획</label>
             </p>
 
             <p>
-              <input type="radio" id="business" name="apply" value="business">
+              <input type="radio" id="business" name="apply" value="경영">
               <label for="business">경영</label>
             </p>
           </div>
@@ -133,7 +131,7 @@
           <h6>첨부된 파일</h6>
           <input class="upload-name" value="파일선택" disabled="disabled">
           <label for="file">파일 첨부하기</label>
-          <input type="file" name="image" class="upload-hidden" id="file" accept="image/jpeg, image/png, .pdf, .doc"> 
+          <input type="file" name="image" class="upload-hidden" id="file" accept=".png, .jpg, .jpeg, .doc, .docx, .pdf">
         </li>
 
         <li>
@@ -143,7 +141,7 @@
       </ul>
 
       <input class="apply" onclick="return confirm('양식을 제출합니다.')" type="submit" value="지원하기"></input>
-     
+
     </form>
   </section>
 
@@ -209,24 +207,64 @@
   <script src="js/jquery-migrate-1.4.1.min.js"></script>
   <script src="js/common.js"></script>
 
+  <script>
+    const url = location.href.split('?')[1];
+    console.log(url); // data
+
+
+    function checkID() {
+      let obj = document.getElementsByName("apply");
+      let obj_length = obj.length;
+
+      for (var i = 0; i < obj_length; i++) {
+        let id = obj[i].id;
+
+        if (id == url) {
+          obj[i].checked = true;
+        }
+      }
+    }
+
+    checkID();
+  </script>
+
+  <script>
+    let fileInput = document.querySelector('#file');
+
+    function fileValidation() {
+      var filename = document.querySelector('.upload-name');
+      var filePath = fileInput.value;
+
+      // Allowing file type
+      var allowedExtensions =
+        /(\.doc|\.docx|\.pdf|\.png|\.jpg|\.jpeg)$/i;
+
+      if (!allowedExtensions.exec(filePath)) {
+        alert('.png, .jpg, .jpeg, .doc, .docx, .pdf 파일만 지원합니다.');
+        filename.value = '';
+        return false;
+      }
+    }
+
+    fileInput.addEventListener('change', fileValidation);
+  </script>
 
   <script>
     $(document).ready(function () {
       var fileTarget = $('.filebox .upload-hidden');
-      fileTarget.on('change',
-        function () {
-          // 값이 변경되면 
-          if (window.FileReader) {
-            // modern browser 
-            var filename = $(this)[0].files[0].name;
-          } else {
-            // old IE 
-            var filename = $(this).val().split('/').pop().split('\\').pop();
-            // 파일명만 추출 
-          }
-          // 추출한 파일명 삽입 
-          $(this).siblings('.upload-name').val(filename);
-        });
+
+      fileTarget.on('change', function () {
+        // 값이 변경되면 
+        if (window.FileReader) {
+          // modern browser 
+          var filename = $(this)[0].files[0].name;
+        } else {
+          // 파일명만 추출 
+          var filename = $(this).val().split('/').pop().split('\\').pop();
+        }
+        // 추출한 파일명 삽입 
+        $(this).siblings('.upload-name').val(filename);
+      });
     });
   </script>
 

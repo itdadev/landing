@@ -56,7 +56,7 @@
   margin-bottom: 6px;
 }
 
-.recruitContent>span {
+.recruitContent p>span {
   display: block;
   color: var(--grey-six);
   font-size: var(--fs-12);
