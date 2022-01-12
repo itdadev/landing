@@ -9,11 +9,16 @@ const multer = require('multer');
 
 // const bodyParser = require("body-parser");
 // const fs = require('fs');
+<<<<<<< HEAD
 // const router = express.Router();
 // app.use(bodyParser.urlencoded({ extended: true }));
 
 // multer : image upload
 
+=======
+
+const multer = require('multer');
+>>>>>>> 179e066433e049cf9b099466b8cb004d74049688
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, 'public/attachments')
@@ -25,6 +30,7 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({storage:storage});
+
 app.use(express.static('public'));
 
 app.get("/", (req, res) => {
@@ -35,6 +41,7 @@ app.get("/recruit-form.html", (req, res) => {
   res.sendFile(__dirname + "/public/recruit-form.html");
 });
 
+<<<<<<< HEAD
 app.post("/recruit-form.html", upload.single('image') ,(req, res) => {
   res.sendFile(__dirname + "/public/recruit-form.html");
 });
@@ -97,3 +104,12 @@ app.listen(PORT, () => {
   console.log(`server running on port ${PORT}`)
 
 })
+=======
+app.post("/recruit-form.html", upload.array("image",10), (req, res) => {
+  res.sendFile(__dirname + "/public/recruit-form.html");
+});
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`)
+});
+>>>>>>> 179e066433e049cf9b099466b8cb004d74049688
