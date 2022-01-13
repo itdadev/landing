@@ -10,6 +10,11 @@
   <link rel="stylesheet" href="css/common.css">
   <link rel="stylesheet" href="css/about.css">
 
+  <!-- swiper -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+  <!-- naver 지도 -->
   <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=oh6f4evch1"></script>
 </head>
 
@@ -75,9 +80,27 @@
   </div>
 
   <!-- 이미지 들어갈 곳 -->
-  <div class="fullImage">
-    <img src="img/imgTest.jpg" alt="샘플 이미지">
+  <!-- Slider main container -->
+  <div class="swiper">
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <div class="swiper-slide">
+        <img src="img/animation.png" alt="샘플 이미지">
+      </div>
+      <div class="swiper-slide">
+        <img src="img/imgTest2.jpg" alt="샘플 이미지">
+      </div>
+      <div class="swiper-slide">
+        <img src="img/imgTest.jpg" alt="샘플 이미지">
+      </div>
+    </div>
+
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
   </div>
+
   <div class="wrap">
     <div class="innerText">
       <p>
@@ -222,6 +245,23 @@
 
     infowindow.open(map, marker);
   </script>
+
+  <script>
+    const swiper = new Swiper('.swiper', {
+      // Optional parameters
+      direction: 'horizontal',
+      slidesPerView: 1,
+      loop: true,
+
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+
+    });
+  </script>
+
 </body>
 
 </html>
