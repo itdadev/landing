@@ -2,10 +2,12 @@ body {
   max-width: 100vw;
   overflow-x: hidden;
 }
-.wrapOverflow{
+
+.wrapOverflow {
   width: 100vw;
   overflow: hidden;
 }
+
 .serviceAll {
   box-sizing: border-box;
   position: relative;
@@ -17,7 +19,6 @@ body {
 .serviceSlide {
   box-sizing: border-box;
   width: 300vw;
-  min-height: 2150px;
   padding-bottom: 3rem;
   display: flex;
 }
@@ -31,7 +32,7 @@ body {
 }
 
 .sectionPadding {
-  padding: 0 3%;
+  padding: 12rem 3% 0;
 }
 
 .serviceWrap .bgText {
@@ -39,6 +40,7 @@ body {
   position: absolute;
   top: 2px;
   left: 0;
+  z-index: -1;
   font-size: clamp(1.5rem, 20vw + 1rem, 50rem);
   line-height: 120px;
   color: black;
@@ -46,8 +48,12 @@ body {
   transform: rotate(180deg);
   writing-mode: vertical-lr;
   white-space: nowrap;
-}
 
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: -moz-none;
+  user-select: none !important;
+}
 
 .serviceWrap>p {
   font-size: var(--fs-18);
@@ -62,6 +68,7 @@ body {
   border-top: 2px solid var(--point-color);
 }
 
+
 h4 {
   margin-top: 3rem;
   margin-bottom: 3rem;
@@ -73,12 +80,17 @@ h4 {
   border-top: none;
 }
 
+.section2 {
+  padding-top: 12rem;
+}
+
 .aLink a {
   color: var(--grey-color);
   opacity: 0.5;
 }
 
-.aLink a.active {
+.aLink a.active,
+.aLink a:hover {
   opacity: 1;
   font-weight: 700;
 }
@@ -129,23 +141,23 @@ figure div img:not(:first-child) {
   line-height: 20px;
 }
 
-.navigation p {
+.navigation a {
   cursor: pointer;
   color: var(--grey-six);
 }
 
-.navigation p img {
+.navigation a img {
   height: 20px;
   margin-right: 6px;
   vertical-align: middle;
 }
 
-.navigation p:last-of-type {
+.navigation a:last-of-type {
   float: right;
   margin-top: 10px;
 }
 
-.navigation p:last-of-type img {
+.navigation a:last-of-type img {
   transform: rotate(180deg);
   margin-right: 0;
   margin-left: 6px;
@@ -193,7 +205,7 @@ figure.designImg img {
 .serviceWrap>ul li:after {
   content: '';
   position: absolute;
-  width: 95%;
+  width: 90%;
   height: 3px;
   top: 45px;
   right: 0;
@@ -236,6 +248,9 @@ figure.designImg img {
     margin: 3rem 20%;
   }
 
+  .section2{
+    padding-top: 0;
+  }
 
   .desingPadding {
     padding: 0 20%;
@@ -250,17 +265,16 @@ figure.designImg img {
     display: flex;
   }
 
-  section h4{
+  section h4 {
     font-size: var(--fs-32);
   }
 
   .aLink {
-    position: sticky;
-    top: 0;
     display: flex;
     width: 20%;
     margin-right: 5%;
     flex-direction: column;
+    align-self: flex-start;
     justify-content: flex-start;
     font-size: var(--fs-24);
   }
@@ -280,6 +294,23 @@ figure.designImg img {
 
   figure figcaption {
     text-align: left;
+  }
+
+  figure figcaption strong {
+    position: relative;
+  }
+
+  figure figcaption strong:before {
+    content: '';
+    position: absolute;
+    width: 80%;
+    height: 50%;
+    top: 50%;
+    left: 10%;
+    z-index: -1;
+    background-color: #90ACF7;
+    opacity: 0.3;
+
   }
 
   .mobileImg {
@@ -302,6 +333,10 @@ figure.designImg img {
 
   .serviceWrap>ul li {
     flex: 1;
+  }
+
+  .serviceWrap>ul li:after {
+    width: 80%;
   }
 
   .serviceWrap>ul li:not(:last-child) {

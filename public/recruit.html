@@ -278,15 +278,12 @@
 
     <script>
         let alink = document.querySelectorAll('.dataSend');
-        console.log(alink);
 
         for (let i = 0; i < alink.length; i++) {
             let alinks = alink[i];
             let data = alinks.dataset.url;
-            console.log(data);
 
             alinks.addEventListener('click', () => {
-
                 alinks.href = `recruit-more.html?${data}`;
             });
 

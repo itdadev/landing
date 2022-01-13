@@ -96,7 +96,7 @@
                     단계입니다.
                   </p>
                   <p>
-                    User Flow 란?
+                    <strong>User Flow</strong> 란?
                     제품을 통한 사용자의 움직임을 설명하고 진입점에서 최종 상호작용에 이르기까지 사용자가 수행하는 단계를 말합니다.
                   </p>
                 </figcaption>
@@ -110,11 +110,9 @@
                 <figcaption>
                   <p>
                     User Flow에서 확정된 사항을 기반으로 메뉴 구조도(IA)를 작성합니다.
-
                   </p>
                   <p>
-
-                    메뉴구조도란(IA)?
+                    <strong>메뉴구조도란(IA)</strong>?
                     메뉴명으로 노출되는 부분만이 계층적으로 작성되는 것으로 좀더 시각적이고 웹사이트의 사용자 입장에서 무엇을 보게 될지 가늠할 수 있는 문서이다.
                   </p>
                 </figcaption>
@@ -127,7 +125,7 @@
                 </div>
                 <figcaption>
                   <p>
-                    실제 개발될 화면을 확인하는 마지막 단계인 Wireframe입니다. 이단계에서 feedback과 수정을 진행하고 디자인에 착수 되게 됩니다.
+                    실제 개발될 화면을 확인하는 마지막 단계인 <strong>Wireframe</strong>입니다. 이단계에서 feedback과 수정을 진행하고 디자인에 착수 되게 됩니다.
                   </p>
                 </figcaption>
               </figure>
@@ -139,7 +137,7 @@
                 </div>
                 <figcaption>
                   <p>
-                    기능명세서 또는 추가적인 UML diagram을 통해 정리하며, 필요에 따라 ERD 작업까지 진행합니다.
+                    기능명세서 또는 추가적인 <strong>UML diagram</strong>을 통해 정리하며, 필요에 따라 ERD 작업까지 진행합니다.
                   </p>
                 </figcaption>
               </figure>
@@ -147,14 +145,14 @@
           </div>
 
           <div class="navigation">
-            <p>
+            <a href="#developing">
               <img src="img/arrow_left.png" alt="좌우 이동 아이콘">
               개발 과정 확인하러 가기
-            </p>
-            <p>
+            </a>
+            <a href="#designing">
               디자인 과정 확인하러 가기
               <img src="img/arrow_left.png" alt="좌우 이동 아이콘">
-            </p>
+            </a>
           </div>
         </section>
 
@@ -193,15 +191,16 @@
             </div>
           </figure>
 
+
           <div class="navigation desingPadding">
-            <p>
+            <a href="#planning">
               <img src="img/arrow_left.png" alt="좌우 이동 아이콘">
               기획 과정 확인하러 가기
-            </p>
-            <p>
+            </a>
+            <a href="#developing">
               개발 과정 확인하러 가기
               <img src="img/arrow_left.png" alt="좌우 이동 아이콘">
-            </p>
+            </a>
           </div>
 
         </section>
@@ -250,14 +249,14 @@
           </ul>
 
           <div class="navigation">
-            <p>
+            <a href="#designing">
               <img src="img/arrow_left.png" alt="좌우 이동 아이콘">
               디자인 과정 확인하러 가기
-            </p>
-            <p>
+            </a>
+            <a href="#planning">
               기획 과정 확인하러 가기
               <img src="img/arrow_left.png" alt="좌우 이동 아이콘">
-            </p>
+            </a>
           </div>
 
         </section>
@@ -327,14 +326,36 @@
   <script>
     //   service
     $(document).ready(function () {
-
+      // 기획
       let section1 = $('.section1').outerHeight();
+      // 디자인
       let section2 = $('.section2').outerHeight();
+      // 개발
       let section3 = $('.section3').outerHeight();
 
-      $('.serviceSlide').outerHeight(section1);
+      // ------------------------------------------------
+      let currentUrl = $(location).attr('href');
+      let splitUrl = currentUrl.split('#');
+      let getAlink = splitUrl[1];
 
-      $('.section1 .navigation p:first-child').click(function () {
+      if (getAlink == 'developing') {
+        $('.serviceAll').css({
+          'left': '-200vw'
+        });
+        $('.serviceSlide').outerHeight(section3);
+      } else if (getAlink == 'designing') {
+        $('.serviceAll').css({
+          'left': '-100vw'
+        });
+        $('.serviceSlide').outerHeight(section2);
+      } else {
+        $('.serviceSlide').outerHeight(section1);
+        $('.serviceAll').css({
+          'left': '0'
+        });
+      }
+
+      $('.section1 .navigation a:first-child').click(function () {
         $('.serviceAll').animate({
           'left': '-200vw'
         }, 200);
@@ -344,7 +365,7 @@
         $('.serviceSlide').outerHeight(section3);
       });
 
-      $('.section2 .navigation p:first-child').click(function () {
+      $('.section2 .navigation a:first-child').click(function () {
         $('.serviceAll').animate({
           'left': '0'
         }, 200);
@@ -354,7 +375,7 @@
         $('.serviceSlide').outerHeight(section1);
       });
 
-      $('.section3 .navigation p:first-child').click(function () {
+      $('.section3 .navigation a:first-child').click(function () {
         $('.serviceAll').animate({
           'left': '-100vw'
         }, 200);
@@ -365,7 +386,7 @@
       });
 
 
-      $('.section1 .navigation p:last-child').click(function () {
+      $('.section1 .navigation a:last-child').click(function () {
         $('.serviceAll').animate({
           'left': '-100vw'
         }, 200);
@@ -375,7 +396,7 @@
         $('.serviceSlide').outerHeight(section2);
       });
 
-      $('.section2 .navigation p:last-child').click(function () {
+      $('.section2 .navigation a:last-child').click(function () {
         $('.serviceAll').animate({
           'left': '-200vw'
         }, 200);
@@ -385,7 +406,7 @@
         $('.serviceSlide').outerHeight(section3);
       });
 
-      $('.section3 .navigation p:last-child').click(function () {
+      $('.section3 .navigation a:last-child').click(function () {
 
         $('.serviceAll').animate({
           'left': '0'
@@ -398,13 +419,36 @@
     });
 
     $(window).resize(function () {
+      // 기획
       let section1 = $('.section1').outerHeight();
+      // 디자인
       let section2 = $('.section2').outerHeight();
+      // 개발
       let section3 = $('.section3').outerHeight();
 
-      $('.serviceSlide').outerHeight(section1);
+      // ------------------------------------------------
+      let currentUrl = $(location).attr('href');
+      let splitUrl = currentUrl.split('#');
+      let getAlink = splitUrl[1];
 
-      $('.section1 .navigation p:first-child').click(function () {
+      if (getAlink == 'developing') {
+        $('.serviceAll').css({
+          'left': '-200vw'
+        });
+        $('.serviceSlide').outerHeight(section3);
+      } else if (getAlink == 'designing') {
+        $('.serviceAll').css({
+          'left': '-100vw'
+        });
+        $('.serviceSlide').outerHeight(section2);
+      } else {
+        $('.serviceSlide').outerHeight(section1);
+        $('.serviceAll').css({
+          'left': '0'
+        });
+      }
+
+      $('.section1 .navigation a:first-child').click(function () {
         $('.serviceAll').animate({
           'left': '-200vw'
         }, 200);
@@ -414,7 +458,7 @@
         $('.serviceSlide').outerHeight(section3);
       });
 
-      $('.section2 .navigation p:first-child').click(function () {
+      $('.section2 .navigation a:first-child').click(function () {
         $('.serviceAll').animate({
           'left': '0'
         }, 200);
@@ -424,7 +468,7 @@
         $('.serviceSlide').outerHeight(section1);
       });
 
-      $('.section3 .navigation p:first-child').click(function () {
+      $('.section3 .navigation a:first-child').click(function () {
         $('.serviceAll').animate({
           'left': '-100vw'
         }, 200);
@@ -435,7 +479,7 @@
       });
 
 
-      $('.section1 .navigation p:last-child').click(function () {
+      $('.section1 .navigation a:last-child').click(function () {
         $('.serviceAll').animate({
           'left': '-100vw'
         }, 200);
@@ -445,7 +489,7 @@
         $('.serviceSlide').outerHeight(section2);
       });
 
-      $('.section2 .navigation p:last-child').click(function () {
+      $('.section2 .navigation a:last-child').click(function () {
         $('.serviceAll').animate({
           'left': '-200vw'
         }, 200);
@@ -455,7 +499,7 @@
         $('.serviceSlide').outerHeight(section3);
       });
 
-      $('.section3 .navigation p:last-child').click(function () {
+      $('.section3 .navigation a:last-child').click(function () {
 
         $('.serviceAll').animate({
           'left': '0'
