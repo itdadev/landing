@@ -1,11 +1,13 @@
 body {
+  position: relative;
   max-width: 100vw;
   overflow-x: hidden;
 }
 
 .wrapOverflow {
   width: 100vw;
-  overflow: hidden;
+  height: fit-content;
+  /* overflow: hidden; */
 }
 
 .serviceAll {
@@ -60,7 +62,16 @@ body {
   padding: 3rem 0;
 }
 
+.linkFigure {
+  position: relative;
+  width: 100%;
+}
+
 .aLink {
+  position: sticky;
+  width: 100%;
+  height: 100%;
+  top: 0;
   font-size: var(--fs-15);
   display: flex;
   justify-content: space-between;
@@ -263,7 +274,6 @@ figure.designImg img {
   }
 
   .linkFigure {
-    position: relative;
     display: flex;
     align-items: flex-start;
   }
@@ -273,8 +283,6 @@ figure.designImg img {
   }
 
   .aLink {
-    position: sticky;
-    top: 0;
     display: flex;
     width: 20%;
     height: 400px;
