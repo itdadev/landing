@@ -240,6 +240,7 @@ figure.designImg img {
 }
 
 @media (min-width: 1024px) {
+
   .sectionPadding {
     padding: 0 6%;
   }
@@ -262,7 +263,9 @@ figure.designImg img {
   }
 
   .linkFigure {
+    position: relative;
     display: flex;
+    align-items: flex-start;
   }
 
   section h4 {
@@ -270,11 +273,13 @@ figure.designImg img {
   }
 
   .aLink {
+    position: sticky;
+    top: 0;
     display: flex;
     width: 20%;
+    height: 400px;
     margin-right: 5%;
     flex-direction: column;
-    align-self: flex-start;
     justify-content: flex-start;
     font-size: var(--fs-24);
   }
