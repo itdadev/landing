@@ -4,9 +4,8 @@ main {
   margin-top: 28px;
 }
 
-
 /* border 공통 */
-section ul li>div {
+section ul li > div {
   width: 100%;
   margin-top: 20px;
   display: flex;
@@ -35,7 +34,7 @@ section ul li>div {
   justify-content: center;
 }
 
-.icon>img {
+.icon > img {
   width: 80%;
   min-width: 160px;
   max-width: 300px;
@@ -62,7 +61,6 @@ section ul li>div {
   font-weight: bold;
   line-height: 28px;
 }
-
 
 /* Main Service */
 .mainService ul li {
@@ -100,15 +98,14 @@ section ul li>div {
   color: var(--grey-color);
 }
 
-.mainService ul a>img {
+.mainService ul a > img {
   width: 6%;
   transition: all 0.3s;
 }
 
-.mainService ul li:hover a>img {
+.mainService ul li:hover a > img {
   transform: translateX(20px);
 }
-
 
 /* Mediaquery */
 @media (min-width: 1024px) {
@@ -121,7 +118,7 @@ section ul li>div {
     flex-direction: row;
   }
 
-  .category ul li>div {
+  .category ul li > div {
     flex-direction: row;
     padding: 2% 0;
   }
@@ -143,6 +140,4 @@ section ul li>div {
   .mainService ul li:not(:last-child) {
     margin-right: 16px;
   }
-
-
 }
