@@ -55,6 +55,10 @@ section ul li > div {
   padding: 2rem;
 }
 
+.mainService {
+  margin-top: 6rem;
+}
+
 .mainService ul li h4 {
   font-size: var(--fs-18);
   color: var(--grey-color);
@@ -70,9 +74,12 @@ section ul li > div {
   border-radius: 4.47027px;
   padding: 10% 20px;
   margin-bottom: 15%;
+  flex: 1;
 }
 
 .mainService ul li a {
+  position: relative;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -99,6 +106,8 @@ section ul li > div {
 }
 
 .mainService ul a > img {
+  position: absolute;
+  bottom: 0;
   width: 6%;
   transition: all 0.3s;
 }
@@ -140,4 +149,24 @@ section ul li > div {
   .mainService ul li:not(:last-child) {
     margin-right: 16px;
   }
+
+  .mainService ul li p {
+    font-size: var(--fs-18);
+    line-height: 1.5;
+  }
+
+  .text span {
+    font-size: var(--fs-20);
+  }
+
+  
+  .text p {
+    font-size: var(--fs-18);
+    line-height: 1.5;
+  }
+
+  .mainService ul li h4 {
+    font-size: var(--fs-24);
+  }
+  
 }
