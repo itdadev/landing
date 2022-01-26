@@ -2,9 +2,9 @@ $(window).scroll(function () {
 	var scroll = $(document).scrollTop();
 
   if(scroll == 0) {
-    $('.mobileHeader').css("opacity","1")
+    $('.mobileHeader').stop().animate({opacity: '1'},200).css({display: 'block'});
   }else{
-    $('.mobileHeader').css("opacity","0")
+    $('.mobileHeader').stop().animate({opacity: '0'},200).css({display: 'none'});
   }
 });
 
