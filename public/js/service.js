@@ -10,6 +10,7 @@ $(window).on('scroll', function () {
 
 //   service
 $(document).ready(function () {
+
   $('.aLink a').on('click', function (event) {
     $(this).siblings().removeClass('active');
     $(this).addClass('active');
@@ -32,30 +33,26 @@ $(document).ready(function () {
       display: 'none'
     });
 
-    $('.serviceAll').css({
-      'left': '0'
-    });
+    $('.section3').fadeIn();
 
     $('.serviceSlide').outerHeight(section3);
 
   } else if (getAlink == 'designing') {
-    $('.section1, .section2').css({
-      display: 'block'
+    $('.section1, .section3').css({
+      display: 'none'
     });
 
-    $('.serviceAll').css({
-      'left': '-100vw'
-    });
+    $('.section2').fadeIn();
+
     $('.serviceSlide').outerHeight(section2);
 
   } else {
-    $('.section1, .section2').css({
-      display: 'block'
+    $('.section2, .section3').css({
+      display: 'none'
     });
 
-    $('.serviceAll').css({
-      'left': '0'
-    });
+    $('.section1').fadeIn();
+
     $('.serviceSlide').outerHeight(section1);
   }
 
@@ -68,35 +65,32 @@ $(document).ready(function () {
         display: 'none'
       });
 
-      $('.serviceAll').css({
-        'left': '0'
-      });
+      $('.section3').fadeIn();
+
       $("body, html").delay(200).animate({
         scrollTop: 0
       }, 500);
       $('.serviceSlide').outerHeight(section3);
 
     } else if (currentNav === 'designing') {
-      $('.section1, .section2').css({
-        display: 'block'
+      $('.section1, .section3').css({
+        display: 'none'
       });
 
-      $('.serviceAll').css({
-        'left': '-100vw'
-      });
+      $('.section2').fadeIn();
+
       $("body, html").delay(200).animate({
         scrollTop: 0
       }, 500);
       $('.serviceSlide').outerHeight(section2);
 
     } else {
-      $('.section1, .section2').css({
-        display: 'block'
+      $('.section2, .section3').css({
+        display: 'none'
       });
 
-      $('.serviceAll').css({
-        'left': '0'
-      });
+      $('.section1').fadeIn();
+
       $("body, html").delay(200).animate({
         scrollTop: 0
       }, 500);
@@ -108,6 +102,10 @@ $(document).ready(function () {
 });
 
 $(window).resize(function () {
+  $('.aLink a').on('click', function (event) {
+    $(this).siblings().removeClass('active');
+    $(this).addClass('active');
+  });
 
   // 기획
   let section1 = $('.section1').outerHeight();
@@ -126,30 +124,26 @@ $(window).resize(function () {
       display: 'none'
     });
 
-    $('.serviceAll').css({
-      'left': '0'
-    });
+    $('.section3').fadeIn();
 
     $('.serviceSlide').outerHeight(section3);
 
   } else if (getAlink == 'designing') {
-    $('.section1, .section2').css({
-      display: 'block'
+    $('.section1, .section3').css({
+      display: 'none'
     });
 
-    $('.serviceAll').css({
-      'left': '-100vw'
-    });
+    $('.section2').fadeIn();
+
     $('.serviceSlide').outerHeight(section2);
 
   } else {
-    $('.section1, .section2').css({
-      display: 'block'
+    $('.section2, .section3').css({
+      display: 'none'
     });
 
-    $('.serviceAll').css({
-      'left': '0'
-    });
+    $('.section1').fadeIn();
+
     $('.serviceSlide').outerHeight(section1);
   }
 
@@ -162,40 +156,22 @@ $(window).resize(function () {
         display: 'none'
       });
 
-      $('.serviceAll').css({
-        'left': '0'
-      });
-      $("body, html").delay(200).animate({
-        scrollTop: 0
-      }, 500);
+      $('.section3').fadeIn();
       $('.serviceSlide').outerHeight(section3);
-
     } else if (currentNav === 'designing') {
-      $('.section1, .section2').css({
-        display: 'block'
+      $('.section1, .section3').css({
+        display: 'none'
       });
 
-      $('.serviceAll').css({
-        'left': '-100vw'
-      });
-      $("body, html").delay(200).animate({
-        scrollTop: 0
-      }, 500);
+      $('.section2').fadeIn();
       $('.serviceSlide').outerHeight(section2);
-
     } else {
-      $('.section1, .section2').css({
-        display: 'block'
+      $('.section2, .section3').css({
+        display: 'none'
       });
 
-      $('.serviceAll').css({
-        'left': '0'
-      });
-      $("body, html").delay(200).animate({
-        scrollTop: 0
-      }, 500);
+      $('.section1').fadeIn();
       $('.serviceSlide').outerHeight(section1);
-
     }
   });
 });
