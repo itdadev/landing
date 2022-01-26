@@ -4,6 +4,12 @@
   border-bottom: 2px solid var(--point-color);
 }
 
+
+.recruitWrap>p strong {
+  font-weight: 600;
+  color: var(--point-color);
+}
+
 .recruitWrap h4 {
   margin-top: 3rem;
   margin-bottom: 3rem;
@@ -26,6 +32,7 @@
 .recruitLink ul li:first-of-type {
   width: 50%;
   background: var(--point-color);
+  border: 1px solid var(--point-color);
 }
 
 .recruitLink figure {

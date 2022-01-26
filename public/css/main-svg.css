@@ -112,7 +112,7 @@ main svg {
   animation-delay: 2.2s;
 }
 #rec9 {
-  animation: moveDown 0.8s ease;
+  animation: moveDownLittle 0.8s ease;
   animation-delay: 2.2s;
 }
 
@@ -292,7 +292,17 @@ main svg {
   }
 
   to {
-    transform: translateY(100px);
+    transform: translateY(105px);
+  }
+}
+
+@keyframes moveDownLittle {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(80px);
   }
 }
 

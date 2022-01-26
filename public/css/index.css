@@ -5,7 +5,7 @@ main {
 }
 
 /* border 공통 */
-section ul li > div {
+section ul li>div {
   width: 100%;
   margin-top: 20px;
   display: flex;
@@ -34,7 +34,7 @@ section ul li > div {
   justify-content: center;
 }
 
-.icon > img {
+.icon>img {
   width: 80%;
   min-width: 160px;
   max-width: 300px;
@@ -105,14 +105,14 @@ section ul li > div {
   color: var(--grey-color);
 }
 
-.mainService ul a > img {
+.mainService ul a>img {
   position: absolute;
   bottom: 0;
   width: 6%;
   transition: all 0.3s;
 }
 
-.mainService ul li:hover a > img {
+.mainService ul li:hover a>img {
   transform: translateX(20px);
 }
 
@@ -127,8 +127,9 @@ section ul li > div {
     flex-direction: row;
   }
 
-  .category ul li > div {
+  .category ul li>div {
     flex-direction: row;
+    align-items: flex-start;
     padding: 2% 0;
   }
 
@@ -155,11 +156,18 @@ section ul li > div {
     line-height: 1.5;
   }
 
+  .text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 3.2rem;
+  }
+
   .text span {
     font-size: var(--fs-20);
   }
 
-  
   .text p {
     font-size: var(--fs-18);
     line-height: 1.5;
@@ -168,5 +176,5 @@ section ul li > div {
   .mainService ul li h4 {
     font-size: var(--fs-24);
   }
-  
+
 }

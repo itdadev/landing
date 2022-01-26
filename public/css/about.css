@@ -37,6 +37,7 @@
   font-size: var(--fs-18);
   color: var(--grey-color);
   line-height: 25px;
+  word-break: keep-all;
 }
 
 .innerText p {

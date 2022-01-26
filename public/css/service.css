@@ -4,17 +4,10 @@ body {
   overflow-x: hidden;
 }
 
-.wrapOverflow {
-  width: 100vw;
-  height: fit-content;
-  /* overflow: hidden; */
-}
-
 .serviceAll {
   box-sizing: border-box;
   position: relative;
-  /* left: 0; */
-  left: -200vw;
+  left: 0;
   width: 100vw;
 }
 
@@ -25,12 +18,13 @@ body {
   display: flex;
 }
 
-.serviceWrap {
+.serviceWrap { 
   position: relative;
   box-sizing: border-box;
   width: 100vw;
   height: 100%;
   margin: 0 0 6rem;
+  
 }
 
 .sectionPadding {
@@ -180,6 +174,12 @@ figure div img:not(:first-child) {
   margin: 3rem 10%;
 }
 
+.designMargin p {
+  font-size: var(--fs-18);
+  font-weight: 400;
+  margin: 2rem 0;
+}
+
 .desingPadding {
   padding: 0 10%;
 }
@@ -204,6 +204,18 @@ figure.designImg img {
 }
 
 /*  개발 섹션 */
+.section3 h4 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.section3 h4 a{
+  font-weight: 400;
+  font-size: var(--fs-14);
+  color: var(--grey-color);
+}
+
 .serviceWrap>ul li {
   position: relative;
   min-height: 320px;
@@ -251,6 +263,13 @@ figure.designImg img {
 }
 
 @media (min-width: 1024px) {
+  .webLine {
+    border-bottom: 2px solid var(--point-color);
+    margin-bottom: 2rem;
+  }
+  .section3 h4 a{
+    font-size: var(--fs-16);
+  }
 
   .sectionPadding {
     padding: 0 6%;
@@ -280,6 +299,8 @@ figure.designImg img {
 
   section h4 {
     font-size: var(--fs-32);
+    border-bottom: 0;
+    border-top: 0;
   }
 
   .aLink {
@@ -290,6 +311,7 @@ figure.designImg img {
     flex-direction: column;
     justify-content: flex-start;
     font-size: var(--fs-24);
+    border-top: none;
   }
 
   .aLink a {
@@ -301,8 +323,13 @@ figure.designImg img {
     width: 100%;
     line-height: 20px;
     display: flex;
+    align-items: center;
     justify-content: space-between;
     margin-top: 10rem;
+  }
+
+  .navigation a:last-of-type {
+    margin-top: 0;
   }
 
   figure figcaption {
