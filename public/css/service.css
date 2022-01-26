@@ -4,9 +4,16 @@ body {
   overflow-x: hidden;
 }
 
-.serviceAll {
-  box-sizing: border-box;
+.serviceHidden{
   position: relative;
+  box-sizing: border-box;
+  max-width: 100vw;
+  height: fit-content;
+}
+
+.serviceAll {
+  position: relative;
+  box-sizing: border-box;
   left: 0;
   width: 100vw;
 }
@@ -24,7 +31,6 @@ body {
   width: 100vw;
   height: 100%;
   margin: 0 0 6rem;
-  
 }
 
 .sectionPadding {
@@ -180,8 +186,8 @@ figure div img:not(:first-child) {
   margin: 2rem 0;
 }
 
-.desingPadding {
-  padding: 0 10%;
+.designPadding {
+  padding: 0 6%;
 }
 
 figure.figurebg:first-of-type {
@@ -263,6 +269,7 @@ figure.designImg img {
 }
 
 @media (min-width: 1024px) {
+
   .webLine {
     border-bottom: 2px solid var(--point-color);
     margin-bottom: 2rem;
@@ -276,15 +283,15 @@ figure.designImg img {
   }
 
   .designMargin {
-    margin: 3rem 20%;
+    margin: 3rem 18%;
   }
 
   .section2{
     padding-top: 0;
   }
 
-  .desingPadding {
-    padding: 0 20%;
+  .designPadding {
+    padding: 0 18%;
   }
 
   .serviceWrap .bgText {
@@ -319,6 +326,9 @@ figure.designImg img {
   }
 
   .navigation {
+    position: sticky;
+    z-index: 200;
+    bottom: 10rem;
     box-sizing: border-box;
     width: 100%;
     line-height: 20px;
