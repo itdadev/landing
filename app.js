@@ -15,9 +15,8 @@ app.use(bodyParser.json())
 
 app.use(express.static('public'));
 
-
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/public/index.html");
+  res.sendFile(__dirname + "/index.html");
 });
 
 app.listen(PORT, () => {
@@ -46,7 +45,7 @@ const upload = multer({
 }).single('image');
 
 
-app.post("/requst-form.html", (req, res) => {
+app.post("/public/requst-form.html", (req, res) => {
   // execute this middleware to upload the image
   upload(req, res, function(err){
     if(err){
@@ -112,7 +111,7 @@ app.post("/requst-form.html", (req, res) => {
 });
 
 
-app.post("/contact.html", (req, res) => {
+app.post("/public/contact.html", (req, res) => {
   upload(req, res, function(err){
     if(err){
       console.log(err)
