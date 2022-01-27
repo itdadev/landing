@@ -60,17 +60,11 @@ app.post("/requst-form.html", (req, res) => {
 
       path = req.file.path
 
-      // console.log(name)
-      // console.log(phone)
-      // console.log(email)
-      // console.log(content)
-      // console.log(path)
-
       var transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-          user: 'yhklilly0305@gmail.com',
-          pass: 'dbghkrud0305'
+          user: 'dev@itdadev.com',
+          pass: 'dbsdid1123!'
         }
       })
       const output = `
@@ -88,7 +82,7 @@ app.post("/requst-form.html", (req, res) => {
       
       var mailOptions = {
         from: req.body.email,
-        to: 'yhklilly0305@gmail.com',
+        to: 'dev@itdadev.com',
         subject: '지원 메일 from ' + req.body.name,
         html: output,
         attachments: [
@@ -133,8 +127,8 @@ app.post("/contact.html", (req, res) => {
       var transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-          user: 'yhklilly0305@gmail.com',
-          pass: 'dbghkrud0305'
+          user: 'dev@itdadev.com',
+          pass: 'dbsdid1123!'
         }
       })
       const output = `
@@ -152,7 +146,7 @@ app.post("/contact.html", (req, res) => {
       
       var mailOptions = {
         from: req.body.email,
-        to: 'yhklilly0305@gmail.com',
+        to: 'dev@itdadev.com',
         subject: '문의 메일 from ' + req.body.name,
         html: output,
       }
