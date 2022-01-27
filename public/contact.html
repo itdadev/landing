@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="css/contact.css">
     <link rel="stylesheet" href="css/common.css">
 
-    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=oh6f4evch1"></script>
+    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=oh6f4evch1">
+    </script>
 </head>
 
 <body>
@@ -192,7 +193,57 @@
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/jquery-migrate-1.4.1.min.js"></script>
     <script src="js/common.js"></script>
+    var HOME_PATH = window.HOME_PATH || '.';
 
+    var cityhall = new naver.maps.LatLng(37.499617546951285, 127.02959009953081),
+    map = new naver.maps.Map('map', {
+    center: cityhall.destinationPoint(0, 500),
+    zoom: 15
+    }),
+    marker = new naver.maps.Marker({
+    map: map,
+    position: cityhall
+    });
+
+    var contentString = [
+    '<div class="iw_inner">',
+        ' <h3>잇다</h3>',
+        ' <p>서울 강남구 강남대로94길 28 유니언타운 506호<br />',
+            ' <img src="' +
+      'img/logo.png" width="55" height="auto" alt="잇다" class="thumb" /><br />',
+            ' 06134<br />',
+            ' <a href="https://www.itdadev.com" target="_blank">https://www.itdadev.com/</a>',
+            ' </p>',
+        '</div>'
+    ].join('');
+
+    var infowindow = new naver.maps.InfoWindow({
+    content: contentString
+    });
+
+    naver.maps.Event.addListener(marker, "click", function (e) {
+    if (infowindow.getMap()) {
+    infowindow.close();
+    } else {
+    infowindow.open(map, marker);
+    }
+    });
+
+    infowindow.open(map, marker);
+    </script>
+
+    <script>
+        const swiper = new Swiper('.swiper', {
+            direction: 'horizontal',
+            slidesPerView: 1,
+            loop: true,
+            speed: 1000,
+            autoplay: { // 자동 슬라이드 설정 , 비 활성화 시 false
+                delay: 4000, // 시간 설정
+                disableOnInteraction: false, // false로 설정하면 스와이프 후 자동 재생이 비활성화 되지 않음
+            },
+        });
+    </script>
     <script>
         $(document).ready(function () {
             if (window.innerWidth > 1024) {
@@ -248,19 +299,19 @@
 
                 // 모바일 placeholder - 한글로
                 $("label[for='name']").text('이름');
-                $("#name").attr( 'placeholder', '이름' );
+                $("#name").attr('placeholder', '이름');
 
                 $("label[for='phone']").text('전화번호');
-                $("#phone").attr( 'placeholder', '전화번호' );
+                $("#phone").attr('placeholder', '전화번호');
 
                 $("label[for='email']").text('이메일');
-                $("#email").attr( 'placeholder', '이메일' );
+                $("#email").attr('placeholder', '이메일');
 
                 $("label[for='category']").text('카테고리');
-                $("#category").attr( 'placeholder', '카테고리' );
+                $("#category").attr('placeholder', '카테고리');
 
                 $("label[for='content']").text('문의 내용');
-                $("#content").attr( 'placeholder', '문의 내용' );
+                $("#content").attr('placeholder', '문의 내용');
 
             }
 
