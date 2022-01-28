@@ -60,11 +60,6 @@ app.post("/requst-form.html", (req, res) => {
 
       path = req.file.path
 
-      // console.log(name)
-      // console.log(phone)
-      // console.log(email)
-      // console.log(content)
-      // console.log(path)
 
       var transporter = nodemailer.createTransport({
         service: 'gmail',
@@ -107,7 +102,7 @@ app.post("/requst-form.html", (req, res) => {
             if(err){
               return res.end(err)
             }else{
-              res.send("<script>alert('지원해주셔서 감사합니다!');location.href='public//recruit.html';</script>");
+              res.send("<script>alert('지원해주셔서 감사합니다!');location.href='/recruit.html';</script>");
             }
           })
         }
