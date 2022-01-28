@@ -32,7 +32,6 @@ $(window).resize(function () {
   }
 });
 
-alert('sdfjsdlfk');
 
 $(document).ready(function () {
   if ($(window).width() < 1024) {
