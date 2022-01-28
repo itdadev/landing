@@ -32,7 +32,7 @@ $(window).resize(function () {
   }
 });
 
-console.log('common.js');
+alert('sdfjsdlfk');
 
 $(document).ready(function () {
   if ($(window).width() < 1024) {
