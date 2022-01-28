@@ -46,7 +46,7 @@ const upload = multer({
 }).single('image');
 
 
-app.post("/requst-form.html", (req, res) => {
+app.post("/recruit-form.html", (req, res) => {
   // execute this middleware to upload the image
   upload(req, res, function(err){
     if(err){
@@ -59,12 +59,6 @@ app.post("/requst-form.html", (req, res) => {
       content = req.body.content
 
       path = req.file.path
-
-      // console.log(name)
-      // console.log(phone)
-      // console.log(email)
-      // console.log(content)
-      // console.log(path)
 
       var transporter = nodemailer.createTransport({
         service: 'gmail',
@@ -161,7 +155,7 @@ app.post("/contact.html", (req, res) => {
         if(err){
           console.log(err)
         }else{
-          res.send("<script>alert('문의해주셔서 감사합니다! 곧 연락드리겠습니다.');location.href='./public/contact.html';</script>");
+          res.send("<script>alert('문의해주셔서 감사합니다! 곧 연락드리겠습니다.');location.href='/contact.html';</script>");
         }
       })
     }
