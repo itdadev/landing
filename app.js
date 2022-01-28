@@ -155,7 +155,7 @@ app.post("/contact.html", (req, res) => {
         if(err){
           console.log(err)
         }else{
-          res.send("<script>alert('문의해주셔서 감사합니다! 곧 연락드리겠습니다.');location.href='/contact.html';</script>");
+          res.send("<script>alert('문의해주셔서 감사합니다! 곧 연락드리겠습니다.');location.href='./public/contact.html';</script>");
         }
       })
     }
