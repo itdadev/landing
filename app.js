@@ -35,7 +35,6 @@ const storage = multer.diskStorage({
     cb(null, "./attachments")
   },
   filename: (req, file, cb) => {
-    console.log(file);
     cb(null, file.fieldname + "_" + Date.now() + "_" + file.originalname)
   }
 });
@@ -46,7 +45,7 @@ const upload = multer({
 }).single('image');
 
 
-app.post("public/requst-form.html", (req, res) => {
+app.post("/requst-form.html", (req, res) => {
   // execute this middleware to upload the image
   upload(req, res, function(err){
     if(err){
@@ -70,14 +69,14 @@ app.post("public/requst-form.html", (req, res) => {
       const output = `
         <p>새로운 지원 메일이 도착했습니다.</p>
         <h3>지원자 정보</h3>
-        <ul style="list-style: none;">
+        <ul style="list-style: none; font-size: 16px;">
           <li style="list-style: none;">Name: ${req.body.name}</li>
           <li style="list-style: none;">phone: ${req.body.phone}</li>
           <li style="list-style: none;">email: ${req.body.email}</li>
           <li style="list-style: none;">apply: ${req.body.apply}</li>
         </ul>
         <h3>상세 내용</h3>
-        <p>${req.body.content}</p>
+        <p style="font-size: 16px;">${req.body.content}</p>
         `
       
       var mailOptions = {
@@ -112,7 +111,7 @@ app.post("public/requst-form.html", (req, res) => {
 });
 
 
-app.post("public/contact.html", (req, res) => {
+app.post("/contact.html", (req, res) => {
   upload(req, res, function(err){
     if(err){
       console.log(err)
@@ -134,14 +133,14 @@ app.post("public/contact.html", (req, res) => {
       const output = `
         <p>새로운 문의 메일이 도착했습니다.</p>
         <h3>문의자 정보</h3>
-        <ul style="list-style: none;">
+        <ul style="list-style: none; font-size: 16px;">
           <li style="list-style: none;">이름: ${req.body.name}</li>
           <li style="list-style: none;">전화번호: ${req.body.phone}</li>
           <li style="list-style: none;">이메일: ${req.body.email}</li>
           <li style="list-style: none;">카테고리: ${req.body.category}</li>
         </ul>
         <h3>문의 내용</h3>
-        <p>${req.body.content}</p>
+        <p style="font-size: 16px;">${req.body.content}</p>
         `
       
       var mailOptions = {
@@ -155,7 +154,7 @@ app.post("public/contact.html", (req, res) => {
         if(err){
           console.log(err)
         }else{
-          res.send("<script>alert('문의해주셔서 감사합니다! 곧 연락드리겠습니다.');location.href='/public/contact.html';</script>");
+          res.send("<script>alert('문의해주셔서 감사합니다! 곧 연락드리겠습니다.');location.href='/contact.html';</script>");
         }
       })
     }
