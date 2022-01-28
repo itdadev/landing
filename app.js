@@ -111,15 +111,9 @@ app.post("/public/requst-form.html", (req, res) => {
 });
 
 
-<<<<<<< HEAD
 app.post("/contact.html", (req, res) => {
   upload(req, res, function (err) {
     if (err) {
-=======
-app.post("/public/contact.html", (req, res) => {
-  upload(req, res, function(err){
-    if(err){
->>>>>>> parent of 935a2c9 (퇴근 전 commit 메일 오류 수정중)
       console.log(err)
       return res.end("Something went wrong!")
     } else {
