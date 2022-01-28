@@ -112,7 +112,7 @@ app.post("/recruit-form.html", (req, res) => {
 });
 
 
-app.post("https://www.itdadev.com/public/contact", (req, res) => {
+app.post("/public/contact", (req, res) => {
   upload(req, res, function(err){
     if(err){
       console.log(err)
