@@ -60,30 +60,35 @@ app.post("/requst-form.html", (req, res) => {
 
       path = req.file.path
 
+      // console.log(name)
+      // console.log(phone)
+      // console.log(email)
+      // console.log(content)
+      // console.log(path)
 
       var transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-          user: 'yhklilly0305@gmail.com',
-          pass: 'dbghkrud0305'
+          user: 'dev@itdadev.com',
+          pass: 'dbsdid1123!'
         }
       })
       const output = `
         <p>새로운 지원 메일이 도착했습니다.</p>
-        <h3>지원자 정보</h3>
-        <ul style="list-style: none;">
+        <h3 style="font-size: 20px">지원자 정보</h3>
+        <ul style="list-style: none; font-size: 16px;">
           <li style="list-style: none;">Name: ${req.body.name}</li>
           <li style="list-style: none;">phone: ${req.body.phone}</li>
           <li style="list-style: none;">email: ${req.body.email}</li>
           <li style="list-style: none;">apply: ${req.body.apply}</li>
         </ul>
-        <h3>상세 내용</h3>
-        <p>${req.body.content}</p>
+        <h3 style="font-size: 20px">상세 내용</h3>
+        <p style="font-size: 16px;">${req.body.content}</p>
         `
       
       var mailOptions = {
         from: req.body.email,
-        to: 'yhklilly0305@gmail.com',
+        to: 'dev@itdadev.com',
         subject: '지원 메일 from ' + req.body.name,
         html: output,
         attachments: [
@@ -128,26 +133,26 @@ app.post("/contact.html", (req, res) => {
       var transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-          user: 'yhklilly0305@gmail.com',
-          pass: 'dbghkrud0305'
+          user: 'dev@itdadev.com',
+          pass: 'dbsdid1123!'
         }
       })
       const output = `
-        <p>새로운 문의 메일이 도착했습니다.</p>
-        <h3>문의자 정보</h3>
-        <ul style="list-style: none;">
+        <p style="font-size: 16px">새로운 문의 메일이 도착했습니다.</p>
+        <h3 style="font-size: 20px">문의자 정보</h3>
+        <ul style="list-style: none; font-size: 16px;">
           <li style="list-style: none;">이름: ${req.body.name}</li>
           <li style="list-style: none;">전화번호: ${req.body.phone}</li>
           <li style="list-style: none;">이메일: ${req.body.email}</li>
           <li style="list-style: none;">카테고리: ${req.body.category}</li>
         </ul>
-        <h3>문의 내용</h3>
-        <p>${req.body.content}</p>
+        <h3 style="font-size: 20px">문의 내용</h3>
+        <p style="font-size: 16px">${req.body.content}</p>
         `
       
       var mailOptions = {
         from: req.body.email,
-        to: 'yhklilly0305@gmail.com',
+        to: 'dev@itdadev.com',
         subject: '문의 메일 from ' + req.body.name,
         html: output,
       }
@@ -156,7 +161,7 @@ app.post("/contact.html", (req, res) => {
         if(err){
           console.log(err)
         }else{
-          res.send("<script>alert('문의해주셔서 감사합니다! 곧 연락드리겠습니다.');location.href='public/contact.html';</script>");
+          res.send("<script>alert('문의해주셔서 감사합니다! 곧 연락드리겠습니다.');location.href='./public/contact.html';</script>");
         }
       })
     }
