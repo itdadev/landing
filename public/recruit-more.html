@@ -68,11 +68,14 @@
     <h2>채용내용</h2>
 
     <a href="" class="passurl">지원하기</a>
-    <figure class="recruitImg"> 
+
+    <figure class="recruitImg">
       <img src="img/recruit.jpg" alt="지원 공고 이미지">
     </figure>
+
     <a href="" class="passurl">지원하기</a>
   </section>
+
   <footer>
     <div class="webFooterLogo">
       <img src="img/logo_white.svg" alt="잇다 흰색 로고">
@@ -129,20 +132,25 @@
 
     </ul>
   </footer>
-  
+
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/jquery-migrate-1.4.1.min.js"></script>
   <script src="js/common.js"></script>
 
   <script>
     const receivedData = location.href.split('?')[1];
-    console.log(receivedData); // data
 
-    const passurl = document.querySelector('.passurl');
-    passurl.addEventListener('click', () => {
+    const passurl = document.querySelectorAll('.passurl');
+  
+    for (let i = 0; i < passurl.length; i++) {
+      
+      passurl[i].addEventListener('click', function () {
+        passurl[i].href = `recruit-form.html?${receivedData}`;
+      });
 
-      passurl.href = `recruit-form.html?${receivedData}`;
-    });
+    }
+     
+
   </script>
 </body>
 
