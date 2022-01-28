@@ -17,7 +17,7 @@ app.use(express.static('public'));
 
 
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/public/index.html");
+  res.sendFile(__dirname + "/index.html");
 });
 
 app.listen(PORT, () => {
@@ -101,7 +101,7 @@ app.post("/requst-form.html", (req, res) => {
             if(err){
               return res.end(err)
             }else{
-              res.send("<script>alert('지원해주셔서 감사합니다!');location.href='/recruit.html';</script>");
+              res.send("<script>alert('지원해주셔서 감사합니다!');location.href='public/recruit.html';</script>");
             }
           })
         }
@@ -155,7 +155,7 @@ app.post("/contact.html", (req, res) => {
         if(err){
           console.log(err)
         }else{
-          res.send("<script>alert('문의해주셔서 감사합니다! 곧 연락드리겠습니다.');location.href='/contact.html';</script>");
+          res.send("<script>alert('문의해주셔서 감사합니다! 곧 연락드리겠습니다.');location.href='/public/contact.html';</script>");
         }
       })
     }
