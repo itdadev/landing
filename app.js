@@ -9,15 +9,16 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 
-
-app.use(bodyParser.urlencoded({extended: true}))
+app.use(bodyParser.urlencoded({
+  extended: true
+}))
 app.use(bodyParser.json())
 
-app.use(express.static('./public'));
+app.use(express.static(__dirname + '/public'));
 
 
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/index.html");
+  res.sendFile(__dirname + "/");
 });
 
 app.listen(PORT, () => {
@@ -40,18 +41,20 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({
-  storage: storage, 
-  limits: { fileSize: 100 * 1024 * 1024 }
+  storage: storage,
+  limits: {
+    fileSize: 100 * 1024 * 1024
+  }
 }).single('image');
 
 
 app.post("/requst-form.html", (req, res) => {
   // execute this middleware to upload the image
-  upload(req, res, function(err){
-    if(err){
+  upload(req, res, function (err) {
+    if (err) {
       console.log(err)
       return res.end("Something went wrong!")
-    }else{
+    } else {
       name = req.body.name
       phone = req.body.phone
       email = req.body.email
@@ -78,28 +81,26 @@ app.post("/requst-form.html", (req, res) => {
         <h3>상세 내용</h3>
         <p style="font-size: 16px;">${req.body.content}</p>
         `
-      
+
       var mailOptions = {
         from: req.body.email,
         to: 'dev@itdadev.com',
         subject: '지원 메일 from ' + req.body.name,
         html: output,
-        attachments: [
-          {
-            path: path
-          }
-        ]
+        attachments: [{
+          path: path
+        }]
       }
 
-      transporter.sendMail(mailOptions, function(err,info){
-        if(err){
+      transporter.sendMail(mailOptions, function (err, info) {
+        if (err) {
           console.log(err)
-        }else{
+        } else {
 
-          fs.unlink(path, function(err){
-            if(err){
+          fs.unlink(path, function (err) {
+            if (err) {
               return res.end(err)
-            }else{
+            } else {
               res.send("<script>alert('지원해주셔서 감사합니다!');location.href='public/recruit.html';</script>");
             }
           })
@@ -112,11 +113,11 @@ app.post("/requst-form.html", (req, res) => {
 
 
 app.post("/contact.html", (req, res) => {
-  upload(req, res, function(err){
-    if(err){
+  upload(req, res, function (err) {
+    if (err) {
       console.log(err)
       return res.end("Something went wrong!")
-    }else{
+    } else {
       name = req.body.name
       phone = req.body.phone
       email = req.body.email
@@ -142,7 +143,7 @@ app.post("/contact.html", (req, res) => {
         <h3>문의 내용</h3>
         <p style="font-size: 16px;">${req.body.content}</p>
         `
-      
+
       var mailOptions = {
         from: req.body.email,
         to: 'dev@itdadev.com',
@@ -150,10 +151,10 @@ app.post("/contact.html", (req, res) => {
         html: output,
       }
 
-      transporter.sendMail(mailOptions, function(err,info){
-        if(err){
+      transporter.sendMail(mailOptions, function (err, info) {
+        if (err) {
           console.log(err)
-        }else{
+        } else {
           res.send("<script>alert('문의해주셔서 감사합니다! 곧 연락드리겠습니다.');location.href='/contact.html';</script>");
         }
       })

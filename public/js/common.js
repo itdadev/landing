@@ -32,7 +32,7 @@ $(window).resize(function () {
   }
 });
 
-
+console.log('common.js');
 
 $(document).ready(function () {
   if ($(window).width() < 1024) {
