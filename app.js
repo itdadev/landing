@@ -13,11 +13,11 @@ const PORT = process.env.PORT || 5000;
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())
 
-app.use(express.static('/'));
+app.use(express.static('public'));
 
 
 app.get("/", (req, res) => {
-  res.sendFile(__dirname + "/index.html");
+  res.sendFile(__dirname + "/public/index.html");
 });
 
 app.listen(PORT, () => {
