@@ -52,6 +52,8 @@ const upload = multer({
 
 
 app.put("/public/recruit-form.html", (req, res) => {
+  console.log('되는 중');
+
   upload(req, res, function(err){
     if(err){
       console.log(err)
@@ -116,7 +118,7 @@ app.put("/public/recruit-form.html", (req, res) => {
 });
 
 
-app.put("/public/contact.html", (req, res) => {
+app.post("/public/contact.html", (req, res) => {
   upload(req, res, function(err){
     if(err){
       console.log(err)
@@ -135,7 +137,7 @@ app.put("/public/contact.html", (req, res) => {
           pass: 'dbsdid1123!'
         }
       })
-      const output = `
+      const outpost = `
         <p style="font-size: 16px">새로운 문의 메일이 도착했습니다.</p>
         <h3 style="font-size: 20px">문의자 정보</h3>
         <ul style="list-style: none; font-size: 16px;">
