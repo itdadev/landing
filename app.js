@@ -59,6 +59,7 @@ app.post("/public/recruit-form.html", (req, res) => {
       name = req.body.name
       phone = req.body.phone
       email = req.body.email
+      apply = req.body.apply
       content = req.body.content
 
       path = req.file.path
@@ -74,19 +75,19 @@ app.post("/public/recruit-form.html", (req, res) => {
         <p>새로운 지원 메일이 도착했습니다.</p>
         <h3 style="font-size: 20px">지원자 정보</h3>
         <ul style="list-style: none; font-size: 16px;">
-          <li style="list-style: none;">Name: ${req.body.name}</li>
-          <li style="list-style: none;">phone: ${req.body.phone}</li>
-          <li style="list-style: none;">email: ${req.body.email}</li>
-          <li style="list-style: none;">apply: ${req.body.apply}</li>
+          <li style="list-style: none;">Name: ${name}</li>
+          <li style="list-style: none;">phone: ${phone}</li>
+          <li style="list-style: none;">email: ${email}</li>
+          <li style="list-style: none;">apply: ${apply}</li>
         </ul>
         <h3 style="font-size: 20px">상세 내용</h3>
-        <p style="font-size: 16px;">${req.body.content}</p>
+        <p style="font-size: 16px;">${content}</p>
         `
       
       var mailOptions = {
-        from: req.body.email,
+        from: email,
         to: 'dev@itdadev.com',
-        subject: '지원 메일 from ' + req.body.name,
+        subject: '지원 메일 from ' + name,
         html: output,
         attachments: [
           {
@@ -138,19 +139,19 @@ app.post("/public/contact.html", (req, res) => {
         <p style="font-size: 16px">새로운 문의 메일이 도착했습니다.</p>
         <h3 style="font-size: 20px">문의자 정보</h3>
         <ul style="list-style: none; font-size: 16px;">
-          <li style="list-style: none;">이름: ${req.body.name}</li>
-          <li style="list-style: none;">전화번호: ${req.body.phone}</li>
-          <li style="list-style: none;">이메일: ${req.body.email}</li>
-          <li style="list-style: none;">카테고리: ${req.body.category}</li>
+          <li style="list-style: none;">이름: ${name}</li>
+          <li style="list-style: none;">전화번호: ${phone}</li>
+          <li style="list-style: none;">이메일: ${email}</li>
+          <li style="list-style: none;">카테고리: ${category}</li>
         </ul>
         <h3 style="font-size: 20px">문의 내용</h3>
-        <p style="font-size: 16px">${req.body.content}</p>
+        <p style="font-size: 16px">${content}</p>
         `
       
       var mailOptions = {
-        from: req.body.email,
+        from: email,
         to: 'dev@itdadev.com',
-        subject: '문의 메일 from ' + req.body.name,
+        subject: '문의 메일 from ' + name,
         html: output,
       }
 
@@ -158,7 +159,7 @@ app.post("/public/contact.html", (req, res) => {
         if(err){
           console.log(err)
         }else{
-          res.send("<script>alert('문의해주셔서 감사합니다! 곧 연락드리겠습니다.');location.href='/public/contact.html';</script>");
+          res.send("<script>alert('문의해주셔서 감사합니다! 곧 연락드리겠습니다.');</script>");
         }
       })
     }
