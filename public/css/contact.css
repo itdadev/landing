@@ -112,7 +112,7 @@ textarea::placeholder {
   transition: all 0.3s;
 }
 
-form button {
+form .button-success {
   background: var(--point-color);
   width: 100%;
   margin-top: 3rem;
@@ -166,7 +166,7 @@ form button {
     margin-bottom: 2.4rem;
   }
 
-  form button {
+  form .button-success {
     border-radius: 0;
   }
 
