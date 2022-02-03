@@ -20,10 +20,6 @@ app.get("/", (req, res) => {
   res.sendFile(__dirname + "/public/index.html");
 });
 
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "https://www.itdadev.com");
-});
-
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
 });
@@ -136,7 +132,7 @@ app.post("/public/contact.html", (req, res) => {
           pass: 'dbsdid1123!'
         }
       })
-      const outpost = `
+      const output = `
         <p style="font-size: 16px">새로운 문의 메일이 도착했습니다.</p>
         <h3 style="font-size: 20px">문의자 정보</h3>
         <ul style="list-style: none; font-size: 16px;">
