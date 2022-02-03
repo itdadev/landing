@@ -17,10 +17,10 @@ app.use(express.static('public'));
 
 
 app.get("/", (req, res) => {
+  res.header('Access-Control-Allow-Headers', 'application/json'); 
   res.sendFile(__dirname + "/public/index.html");
 });
 
-res.header('Access-Control-Allow-Headers', 'application/json'); 
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
