@@ -46,7 +46,7 @@ const upload = multer({
 }).single('image');
 
 
-app.post("https://www.itdadev.com/public/recruit-form.html", (req, res) => {
+app.post("/public/recruit-form.html", (req, res) => {
   // execute this middleware to upload the image
   upload(req, res, function(err){
     if(err){
@@ -101,7 +101,7 @@ app.post("https://www.itdadev.com/public/recruit-form.html", (req, res) => {
             if(err){
               return res.end(err)
             }else{
-              res.send("<script>alert('지원해주셔서 감사합니다!');</script>");
+              res.send("<script>alert('지원해주셔서 감사합니다!');location.href='/recruit.html';</script>");
             }
           })
         }
@@ -112,7 +112,7 @@ app.post("https://www.itdadev.com/public/recruit-form.html", (req, res) => {
 });
 
 
-app.post("https://www.itdadev.com/public/contact.html", (req, res) => {
+app.post("/public/contact.html", (req, res) => {
   upload(req, res, function(err){
     if(err){
       console.log(err)
@@ -155,7 +155,7 @@ app.post("https://www.itdadev.com/public/contact.html", (req, res) => {
         if(err){
           console.log(err)
         }else{
-          res.send("<script>alert('문의해주셔서 감사합니다! 곧 연락드리겠습니다.');</script>");
+          res.send("<script>alert('문의해주셔서 감사합니다! 곧 연락드리겠습니다.');location.href='/public/contact.html';</script>");
         }
       })
     }
