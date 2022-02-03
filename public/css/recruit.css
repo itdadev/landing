@@ -166,6 +166,11 @@ address {
   .recruitContent a:hover img{
     transform: translateX(10px);
   }
+
+  
+.recruitContent p>span {
+  font-size: var(--fs-16);
+}
 }
 
 /* -------------------------------- 지원 내용 recruit-more.html 페이지 style */
