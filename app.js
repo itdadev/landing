@@ -46,7 +46,7 @@ const upload = multer({
 }).single('image');
 
 
-app.post("/public/recruit-form", (req, res) => {
+app.post("https://www.itdadev.com/public/recruit-form.html", (req, res) => {
   // execute this middleware to upload the image
   upload(req, res, function(err){
     if(err){
@@ -112,7 +112,7 @@ app.post("/public/recruit-form", (req, res) => {
 });
 
 
-app.post("/public/contact", (req, res) => {
+app.post("https://www.itdadev.com/public/contact.html", (req, res) => {
   upload(req, res, function(err){
     if(err){
       console.log(err)
