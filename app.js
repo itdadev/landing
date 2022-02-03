@@ -51,7 +51,7 @@ const upload = multer({
 }).single('image');
 
 
-app.put("/public/recruit-form.html", (req, res) => {
+app.head("/public/recruit-form.html", (req, res) => {
   console.log('되는 중');
 
   upload(req, res, function(err){
@@ -73,7 +73,7 @@ app.put("/public/recruit-form.html", (req, res) => {
           pass: 'dbsdid1123!'
         }
       })
-      const output = `
+      const outhead = `
         <p>새로운 지원 메일이 도착했습니다.</p>
         <h3 style="font-size: 20px">지원자 정보</h3>
         <ul style="list-style: none; font-size: 16px;">
