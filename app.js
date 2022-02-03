@@ -17,7 +17,7 @@ app.use(express.static('public'));
 
 
 app.get("/", (req, res) => {
-  // res.header('Access-Control-Allow-Headers', 'application/json'); 
+  res.header('Access-Control-Allow-Headers', 'application/json'); 
   res.sendFile(__dirname + "/public/index.html");
 });
 
