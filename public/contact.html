@@ -103,7 +103,7 @@
                 </div>
             </section>
 
-            <form method="POST" action="/public/contact.html">
+            <form method="POST" action="/public/contact.html" enctype="multipart/form-data">
                 <legend>How To Contact Us</legend>
                 <ul class="clear">
                     <li class="floatLeft">
@@ -127,8 +127,7 @@
                         <textarea name="content" id="content" cols="300" rows="10" placeholder="문의 내용"></textarea>
                     </li>
                 </ul>
-                <input class="button-success" onclick="return confirm('양식을 제출합니다.')" type="submit"></input>
-
+                <input class="button-success" onclick="return confirm('양식을 제출합니다.')" type="submit" value="SEND"></input>
             </form>
 
         </main>
@@ -248,7 +247,6 @@
                 $("#content").attr('placeholder', 'Start typing here');
 
             } else {
-
                 // 모바일 placeholder - 한글로
                 $("label[for='name']").text('이름');
                 $("#name").attr('placeholder', '이름');
@@ -264,9 +262,7 @@
 
                 $("label[for='content']").text('문의 내용');
                 $("#content").attr('placeholder', '문의 내용');
-
             }
-
         }).resize();
     </script>
 </body>
