@@ -20,6 +20,10 @@ app.get("/", (req, res) => {
   res.sendFile(__dirname + "/public/index.html");
 });
 
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "https://www.itdadev.com");
+});
+
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
 });
@@ -47,8 +51,7 @@ const upload = multer({
 }).single('image');
 
 
-app.post("/public/recruit-form.html", (req, res) => {
-  alert('보내기 전');
+app.get("/public/recruit-form.html", (req, res) => {
   upload(req, res, function(err){
     if(err){
       console.log(err)
@@ -102,7 +105,7 @@ app.post("/public/recruit-form.html", (req, res) => {
             if(err){
               return res.end(err)
             }else{
-              res.send("<script>alert('지원해주셔서 감사합니다!');location.href='/recruit.html';</script>");
+              res.send("<script>alert('지원해주셔서 감사합니다!');</script>");
             }
           })
         }
@@ -113,8 +116,7 @@ app.post("/public/recruit-form.html", (req, res) => {
 });
 
 
-app.post("/public/contact.html", (req, res) => {
-  alert('보내기 전');
+app.get("/public/contact.html", (req, res) => {
   upload(req, res, function(err){
     if(err){
       console.log(err)
