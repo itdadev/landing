@@ -31,6 +31,7 @@ var content;
 var path;
 
 const storage = multer.diskStorage({
+  // execute this middleware to upload the image
   destination: (req, file, cb) => {
     cb(null, "./attachments")
   },
@@ -46,8 +47,8 @@ const upload = multer({
 }).single('image');
 
 
-app.get("/public/recruit-form.html", (req, res) => {
-  // execute this middleware to upload the image
+app.post("/public/recruit-form.html", (req, res) => {
+  alert('보내기 전');
   upload(req, res, function(err){
     if(err){
       console.log(err)
@@ -112,7 +113,8 @@ app.get("/public/recruit-form.html", (req, res) => {
 });
 
 
-app.get("/public/contact.html", (req, res) => {
+app.post("/public/contact.html", (req, res) => {
+  alert('보내기 전');
   upload(req, res, function(err){
     if(err){
       console.log(err)
