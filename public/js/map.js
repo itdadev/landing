@@ -17,22 +17,22 @@ var itda = new naver.maps.LatLng(37.499617546951285, 127.02959009953081),
   });
 
 var contentString = [
-  '<a class="iw_inner" href="https://www.itdadev.com" target="_blank" style="display:block; border-radius: 8px; padding: 20px; border:1px solid #5452F6; overflow: hidden; background: #ffffff; width: 315px;">',
-    '<div style="display: flex; align-items:center; justify-content:center;">',
-      '<img src="img/logo.png" height="auto" alt="잇다" class="thumb" style="height: 37px; width: auto; margin-right: 10px;"/>',
-      '<p style="font-weight: bold; color: #595959; width: 100%; font-size: 14px;">서울특별시 강남구 강남대로<br />94길 28 (강남역 12번 출구 도보 4분)</p>',
-    '</div>',
+  '<a class="iw_inner" href="https://www.itdadev.com" target="_blank" style="display:block; border-radius: 8px; padding: 10px 20px; border:1px solid #5452F6; overflow: hidden; background: #ffffff; width: 320px;">',
+  '<div style="display: flex; align-items:center; justify-content:center;">',
+  '<img src="img/logo.png" height="auto" alt="잇다" class="thumb" style="height: 37px; width: auto; margin-right: 10px;"/>',
+  '<p style="font-weight: bold; color: #595959; width: 100%; font-size: 14px;">서울특별시 강남구 강남대로<br />94길 28 (강남역 12번 출구 도보 4분)</p>',
+  '</div>',
   ' </a>',
 ].join('');
 
- var infowindow = new naver.maps.InfoWindow({
-   content: contentString,
-   maxWidth: 400,
-   backgroundColor: "transparent",
-   borderColor: "transparent",
-   disableAnchor: true,
-   pixelOffset: new naver.maps.Point(20, -30)
- });
+var infowindow = new naver.maps.InfoWindow({
+  content: contentString,
+  maxWidth: 400,
+  backgroundColor: "transparent",
+  borderColor: "transparent",
+  disableAnchor: true,
+  pixelOffset: new naver.maps.Point(20, -20)
+});
 
 naver.maps.Event.addListener(marker, "click", function (e) {
   if (infowindow.getMap()) {
