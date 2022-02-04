@@ -49,7 +49,7 @@ const upload = multer({
 }).single('image');
 
 
-app.get("/public/recruit-form.html", (req, res) => {
+app.get("https://www.itdadev.com/public/recruit-form.html", (req, res) => {
 
   upload(req, res, function(err){
     if(err){
@@ -116,7 +116,7 @@ app.get("/public/recruit-form.html", (req, res) => {
 });
 
 
-app.get("/public/contact.html", (req, res) => {
+app.get("https://www.itdadev.com/public/contact.html", (req, res) => {
   upload(req, res, function(err){
     if(err){
       console.log(err)
