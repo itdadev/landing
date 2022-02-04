@@ -13,19 +13,28 @@
 
   var contentString = [
     '<div class="iw_inner">',
-    '   <h3>잇다</h3>',
-    '   <p>서울 강남구 강남대로94길 28 유니언타운 506호<br />',
+    '<a href="https://www.itdadev.com" target="_blank">',
+    '   <p>서울 강남구 강남대로<br />94길 28 <br />(강남역 12번 출구 도보 4분)',
     '       <img src="' +
     'img/logo.png" width="55" height="auto" alt="잇다" class="thumb" /><br />',
     '       06134<br />',
-    '       <a href="https://www.itdadev.com" target="_blank">https://www.itdadev.com/</a>',
     '   </p>',
+    ' </a>',
     '</div>'
   ].join('');
 
   var infowindow = new naver.maps.InfoWindow({
-    content: contentString
-  });
+    content: contentString,
+    maxWidth: 140,
+    backgroundColor: "#eee",
+    borderColor: "#2db400",
+    borderWidth: 5,
+    anchorSize: new naver.maps.Size(30, 30),
+    anchorSkew: true,
+    anchorColor: "#eee",
+    pixelOffset: new naver.maps.Point(20, -20)
+});
+
 
   naver.maps.Event.addListener(marker, "click", function (e) {
     if (infowindow.getMap()) {
