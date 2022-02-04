@@ -10,12 +10,11 @@ var itda = new naver.maps.LatLng(37.499617546951285, 127.02959009953081),
     position: itda,
     icon: {
       url: 'https://www.itdadev.com/public/img/anchor.svg',
-      size: new naver.maps.Size(30, 42),
     }
   });
 
 var contentString = [
-  '<div class="iw_inner">',
+  '<div class="iw_inner" style="border-radius: 8px; padding: 20px; border:1px solid red;">',
   '<a href="https://www.itdadev.com" target="_blank">',
   '       <img src="' +
   'img/logo.png" width="55" height="auto" alt="잇다" class="thumb" />',
@@ -28,12 +27,9 @@ var contentString = [
 var infowindow = new naver.maps.InfoWindow({
   content: contentString,
   maxWidth: 400,
-  padding: 20,
-  margin: 20,
   backgroundColor: "#ffffff",
   borderColor: "#5452F6",
   borderWidth: 1,
-  borderRadius: 8,
   anchorSize: new naver.maps.Size(10, 10),
   anchorSkew: true,
   anchorColor: "#eee",
