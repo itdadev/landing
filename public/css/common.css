@@ -88,8 +88,13 @@ section h4 {
   }
 }
 .thankyou_message {
+  font-size: var(--fs-16);
   margin: 20px auto;
   text-align: center;
+}
+
+.thankyou_message h2 {
+  font-size: var(--fs-16);
 }
 
 .thankyou_message h2 em{
