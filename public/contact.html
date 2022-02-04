@@ -103,7 +103,7 @@
                 </div>
             </section>
 
-            <form method="POST" action="/public/contact.html" enctype="multipart/form-data">
+            <form class="gform" data-email="dev@itdadev.com" method="POST" action="https://script.google.com/macros/s/AKfycbwLVsCgCPuC8A_3_YJjXZOHGxHTWfAQ_US_Gr7seaGdkugnqNLOmMwpCrHwXyDX9FDA0Q/exec" enctype="multipart/form-data">
                 <legend>How To Contact Us</legend>
                 <ul class="clear">
                     <li class="floatLeft">
@@ -127,7 +127,11 @@
                         <textarea name="content" id="content" cols="300" rows="10" placeholder="문의 내용"></textarea>
                     </li>
                 </ul>
-                <input class="button-success" onclick="return confirm('양식을 제출합니다.')" type="submit" value="SEND"></input>
+                <button class="button-success" onclick="return confirm('양식을 제출합니다.')">SEND</button>
+
+                <div style="display:none" class="thankyou_message">
+                    <h2><em>문의주셔서 감사합니다.</em> 곧 연락드리겠습니다!</h2>
+                </div>
             </form>
 
         </main>
@@ -194,6 +198,16 @@
     <script src="js/jquery-migrate-1.4.1.min.js"></script>
     <script src="js/common.js"></script>
     <script src="js/map.js"></script>
+
+    <!-- google Apps Mail *********************************************************************************  -->
+    <!-- 양식이 제출될 때 나오는 메세지 커스터마이징 하기 -->
+    <script data-cfasync="false" type="text/javascript"
+    src="https://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-server/master/form-submission-handler.js"></script>
+
+    <script>
+        
+    </script>
+    <!-- google Apps Mail *********************************************************************************  -->
 
     <script>
         $(document).ready(function () {

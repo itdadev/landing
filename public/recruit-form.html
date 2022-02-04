@@ -74,7 +74,8 @@
       잇다의 입사조건엔 필수조건이 없습니다!
     </p>
 
-    <form action="/public/recruit-form.html" method="POST" enctype="multipart/form-data">
+    <!-- enctype="multipart/form-data" -->
+    <form class="gform" data-email="dev@itdadev.com" action="https://script.google.com/macros/s/AKfycbyhuG2Uog6rcMPwmwIpHdBxX2oo0MdNhuxZNcpMxTxMXROAbKV-UoCoXVjYQ_cPnKDO/exec" method="POST">
       <ul>
         <li class="webFlex">
           <div>
@@ -125,7 +126,7 @@
             </p>
           </div>
         </li>
-        <li class="filebox clear">
+        <!-- <li class="filebox clear">
           <div>
             <h6>
               첨부된 파일
@@ -141,7 +142,7 @@
           <input class="upload-name" value="파일선택" disabled="disabled">
           <label for="file">파일 첨부하기</label>
           <input type="file" name="image" class="upload-hidden" id="file" accept=".png, .jpg, .jpeg, .doc, .docx, .pdf">
-        </li>
+        </li> -->
 
         <li>
           <label for="content">상세 내용</label>
@@ -149,8 +150,11 @@
         </li>
       </ul>
 
-      <input class="apply" onclick="return confirm('양식을 제출합니다.')" type="submit" value="지원하기"></input>
+      <button class="apply" onclick="return confirm('양식을 제출합니다.')">지원하기</button>
 
+      <div style="display:none" class="thankyou_message">
+        <h2><em>지원해주셔서 감사합니다.</em> 곧 연락드리겠습니다!</h2>
+    </div>
     </form>
   </section>
 
@@ -214,6 +218,16 @@
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/jquery-migrate-1.4.1.min.js"></script>
   <script src="js/common.js"></script>
+
+ <!-- google Apps Mail *********************************************************************************  -->
+    <!-- 양식이 제출될 때 나오는 메세지 커스터마이징 하기 -->
+    <script data-cfasync="false" type="text/javascript"
+    src="https://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-server/master/form-submission-handler.js"></script>
+
+    <script>
+        
+    </script>
+    <!-- google Apps Mail *********************************************************************************  -->
 
   <script>
     const url = location.href.split('?')[1];
