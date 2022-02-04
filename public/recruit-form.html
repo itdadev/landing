@@ -75,7 +75,7 @@
     </p>
 
     <!-- enctype="multipart/form-data" -->
-    <form class="gform" data-email="dev@itdadev.com" action="https://script.google.com/macros/s/AKfycbylg3oaOKk-CMgW6hNPbQKdR95o9odwQtdaTzQeWM55lp_yAJVH6w8bFHbN6OhGQD2J/exec" method="POST">
+    <form class="gform" data-email="dev@itdadev.com" method="POST" action="https://script.google.com/macros/s/AKfycbylg3oaOKk-CMgW6hNPbQKdR95o9odwQtdaTzQeWM55lp_yAJVH6w8bFHbN6OhGQD2J/exec">
       <ul>
         <li class="webFlex">
           <div>
@@ -224,9 +224,6 @@
     <script data-cfasync="false" type="text/javascript"
     src="https://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-server/master/form-submission-handler.js"></script>
 
-    <script>
-        
-    </script>
     <!-- google Apps Mail *********************************************************************************  -->
 
   <script>
@@ -249,48 +246,45 @@
   </script>
 
   <script>
-    let fileInput = document.querySelector('#file');
+    // let fileInput = document.querySelector('#file');
 
-    function fileValidation() {
-      var filename = document.querySelector('.upload-name');
-      var filePath = fileInput.value;
+    // function fileValidation() {
+    //   var filename = document.querySelector('.upload-name');
+    //   var filePath = fileInput.value;
 
-      // Allowing file type
-      var allowedExtensions =
-        /(\.doc|\.docx|\.pdf|\.png|\.jpg|\.jpeg)$/i;
+    //   // Allowing file type
+    //   var allowedExtensions =
+    //     /(\.doc|\.docx|\.pdf|\.png|\.jpg|\.jpeg)$/i;
 
-      if (!allowedExtensions.exec(filePath)) {
-        alert('.png, .jpg, .jpeg, .doc, .docx, .pdf 파일만 지원합니다.');
-        filename.value = '';
-        return false;
-      }
-    }
+    //   if (!allowedExtensions.exec(filePath)) {
+    //     alert('.png, .jpg, .jpeg, .doc, .docx, .pdf 파일만 지원합니다.');
+    //     filename.value = '';
+    //     return false;
+    //   }
+    // }
 
     // fileInput.addEventListener('change', fileValidation);
   </script>
 
   <script>
-    $(document).ready(function () {
-      var fileTarget = $('.filebox .upload-hidden');
+    // $(document).ready(function () {
+    //   var fileTarget = $('.filebox .upload-hidden');
 
-      fileTarget.on('change', function () {
-        // 값이 변경되면 
-        if (window.FileReader) {
-          // modern browser 
-          var filename = $(this)[0].files[0].name;
-        } else {
-          // 파일명만 추출 
-          var filename = $(this).val().split('/').pop().split('\\').pop();
-        }
-        // 추출한 파일명 삽입 
-        $(this).siblings('.upload-name').val(filename);
-      });
-    });
+    //   fileTarget.on('change', function () {
+    //     // 값이 변경되면 
+    //     if (window.FileReader) {
+    //       // modern browser 
+    //       var filename = $(this)[0].files[0].name;
+    //     } else {
+    //       // 파일명만 추출 
+    //       var filename = $(this).val().split('/').pop().split('\\').pop();
+    //     }
+    //     // 추출한 파일명 삽입 
+    //     $(this).siblings('.upload-name').val(filename);
+    //   });
+    // });
   </script>
 
-  <script data-cfasync="false" type="text/javascript"
-    src="https://cdn.rawgit.com/dwyl/html-form-send-email-via-google-script-without-server/master/form-submission-handler.js">
-  </script>
 </body>
 
 </html>
