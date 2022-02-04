@@ -2,8 +2,8 @@ var HOME_PATH = window.HOME_PATH || '.';
 
 var itda = new naver.maps.LatLng(37.499617546951285, 127.02959009953081),
   map = new naver.maps.Map('map', {
-    center: itda.destinationPoint(0, 0),
-    zoom: 18
+    center: itda.destinationPoint(0, 200),
+    zoom: 15
   }),
   marker = new naver.maps.Marker({
     map: map,
@@ -31,7 +31,7 @@ var contentString = [
    backgroundColor: "transparent",
    borderColor: "transparent",
    disableAnchor: true,
-   pixelOffset: new naver.maps.Point(20, -40)
+   pixelOffset: new naver.maps.Point(20, -20)
  });
 
 naver.maps.Event.addListener(marker, "click", function (e) {
