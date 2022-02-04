@@ -3,7 +3,7 @@ var HOME_PATH = window.HOME_PATH || '.';
 var itda = new naver.maps.LatLng(37.499617546951285, 127.02959009953081),
   map = new naver.maps.Map('map', {
     center: itda.destinationPoint(0, 500),
-    zoom: 10
+    zoom: 20
   }),
   marker = new naver.maps.Marker({
     map: map,
