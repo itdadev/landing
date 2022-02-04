@@ -1,21 +1,19 @@
 const nodemailer = require('nodemailer');
 const multer = require('multer');
 const bodyParser = require('body-parser');
-
+const cors = require('cors');
 const fs = require('fs');
 
 const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-
-
 app.use(bodyParser.urlencoded({
   extended: true
 }))
 app.use(bodyParser.json())
-
 app.use(express.static('public'));
+app.use(cors());
 
 
 app.get("/", (req, res) => {
@@ -25,13 +23,13 @@ app.get("/", (req, res) => {
 
 exports.handler = async (event) => {
   const response = {
-      statusCode: 200,
-      headers: {
-          "Access-Control-Allow-Headers" : "Content-Type",
-          "Access-Control-Allow-Origin": "https://www.itdadev.com",
-          "Access-Control-Allow-Methods": "OPTIONS,POST,GET"
-      },
-      body: JSON.stringify('Hello from Lambda!'),
+    statusCode: 200,
+    headers: {
+      "Access-Control-Allow-Headers": "Content-Type",
+      "Access-Control-Allow-Origin": "https://www.itdadev.com",
+      "Access-Control-Allow-Methods": "OPTIONS,POST,GET"
+    },
+    body: JSON.stringify('Hello from Lambda!'),
   };
   return response;
 };
