@@ -10,17 +10,24 @@ const PORT = process.env.PORT || 5000;
 
 
 
-app.use(bodyParser.urlencoded({extended: true}))
+app.use(bodyParser.urlencoded({
+  extended: true
+}))
 app.use(bodyParser.json())
 
 app.use(express.static('public'));
 
 
 app.get("/", (req, res) => {
-  res.header('Access-Control-Allow-Headers', 'application/json'); 
+  // res.header('Access-Control-Allow-Headers', 'application/json');
   res.sendFile(__dirname + "/public/index.html");
 });
 
+app.all('/*', function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "application/json");
+  next();
+});
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
@@ -44,18 +51,20 @@ const storage = multer.diskStorage({
 });
 
 const upload = multer({
-  storage: storage, 
-  limits: { fileSize: 100 * 1024 * 1024 }
+  storage: storage,
+  limits: {
+    fileSize: 100 * 1024 * 1024
+  }
 }).single('image');
 
 
 app.post("https://www.itdadev.com/public/recruit-form.html", (req, res) => {
 
-  upload(req, res, function(err){
-    if(err){
+  upload(req, res, function (err) {
+    if (err) {
       console.log(err)
       return res.end("Something went wrong!")
-    }else{
+    } else {
       name = req.body.name
       phone = req.body.phone
       email = req.body.email
@@ -83,28 +92,26 @@ app.post("https://www.itdadev.com/public/recruit-form.html", (req, res) => {
         <h3 style="font-size: 20px">상세 내용</h3>
         <p style="font-size: 16px;">${content}</p>
         `
-      
+
       var mailOptions = {
         from: email,
         to: 'dev@itdadev.com',
         subject: '지원 메일 from ' + name,
         html: output,
-        attachments: [
-          {
-            path: path
-          }
-        ]
+        attachments: [{
+          path: path
+        }]
       }
 
-      transporter.sendMail(mailOptions, function(err,info){
-        if(err){
+      transporter.sendMail(mailOptions, function (err, info) {
+        if (err) {
           console.log(err)
-        }else{
+        } else {
 
-          fs.unlink(path, function(err){
-            if(err){
+          fs.unlink(path, function (err) {
+            if (err) {
               return res.end(err)
-            }else{
+            } else {
               res.send("<script>alert('지원해주셔서 감사합니다!');</script>");
             }
           })
@@ -117,11 +124,11 @@ app.post("https://www.itdadev.com/public/recruit-form.html", (req, res) => {
 
 
 app.post("https://www.itdadev.com/public/contact.html", (req, res) => {
-  upload(req, res, function(err){
-    if(err){
+  upload(req, res, function (err) {
+    if (err) {
       console.log(err)
       return res.end("Something went wrong!")
-    }else{
+    } else {
       name = req.body.name
       phone = req.body.phone
       email = req.body.email
@@ -147,7 +154,7 @@ app.post("https://www.itdadev.com/public/contact.html", (req, res) => {
         <h3 style="font-size: 20px">문의 내용</h3>
         <p style="font-size: 16px">${content}</p>
         `
-      
+
       var mailOptions = {
         from: email,
         to: 'dev@itdadev.com',
@@ -155,10 +162,10 @@ app.post("https://www.itdadev.com/public/contact.html", (req, res) => {
         html: output,
       }
 
-      transporter.sendMail(mailOptions, function(err,info){
-        if(err){
+      transporter.sendMail(mailOptions, function (err, info) {
+        if (err) {
           console.log(err)
-        }else{
+        } else {
           res.send("<script>alert('문의해주셔서 감사합니다! 곧 연락드리겠습니다.');</script>");
         }
       })
