@@ -7,7 +7,10 @@ var itda = new naver.maps.LatLng(37.499617546951285, 127.02959009953081),
   }),
   marker = new naver.maps.Marker({
     map: map,
-    position: itda
+    position: itda,
+    icon: {
+      url: '/public/img/anchor.svg',
+    }
   });
 
 var contentString = [
@@ -28,22 +31,13 @@ var infowindow = new naver.maps.InfoWindow({
   backgroundColor: "#ffffff",
   borderColor: "#5452F6",
   borderWidth: 1,
+  borderRadius: 8,
   anchorSize: new naver.maps.Size(30, 30),
   anchorSkew: true,
   anchorColor: "#eee",
   pixelOffset: new naver.maps.Point(20, -20)
 });
 
-var markerOptions = {
-  position: position.destinationPoint(90, 15),
-  map: map,
-  icon: {
-    url: '/public/img/anchor.svg',
-    size: new naver.maps.Size(50, 52),
-    origin: new naver.maps.Point(0, 0),
-    anchor: new naver.maps.Point(25, 26)
-  }
-};
 
 naver.maps.Event.addListener(marker, "click", function (e) {
   if (infowindow.getMap()) {
