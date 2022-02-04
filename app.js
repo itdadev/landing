@@ -21,8 +21,13 @@ app.get("/", (req, res) => {
   res.sendFile(__dirname + "/public/index.html");
 });
 
-app.get('https://www.itdadev.com/public/recruit-form.html', function (req, res, next) {
-  res.json({msg: 'This is CORS-enabled for all origins!'})
+var corsOptions = {
+  origin: 'https://www.itdadev.com/public/recruit-form.html',
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
+
+app.get('https://www.itdadev.com/public/recruit-form.html', cors(corsOptions), function (req, res, next) {
+  res.json({msg: 'This is CORS-enabled for only example.com.'})
 })
 
 exports.handler = async (event) => {
@@ -38,13 +43,10 @@ exports.handler = async (event) => {
   return response;
 };
 
-
-
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
   console.log(`CORS-enabled web server listening on port ${PORT}`)
 });
-
 
 
 var name;
