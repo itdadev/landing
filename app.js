@@ -21,6 +21,10 @@ app.get("/", (req, res) => {
   res.sendFile(__dirname + "/public/index.html");
 });
 
+app.get('https://www.itdadev.com/public/recruit-form.html', function (req, res, next) {
+  res.json({msg: 'This is CORS-enabled for all origins!'})
+})
+
 exports.handler = async (event) => {
   const response = {
     statusCode: 200,
@@ -41,9 +45,6 @@ app.listen(PORT, () => {
   console.log(`CORS-enabled web server listening on port ${PORT}`)
 });
 
-app.get('/products/:id', function (req, res, next) {
-  res.json({msg: 'This is CORS-enabled for all origins!'})
-})
 
 
 var name;
