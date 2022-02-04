@@ -68,7 +68,7 @@ form li.radio div label {
   margin: 0 0 0.5em;
 }
 
-form input.apply {
+form button {
   display: block;
   background: var(--point-color);
   width: 50%;
@@ -180,7 +180,7 @@ form input.apply {
     order: 6;
   }
 
-  form input.apply {
+  form button {
     width: 20%;
     margin: 5rem auto;
     padding: 1.6rem 0;
