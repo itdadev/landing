@@ -9,7 +9,7 @@ var itda = new naver.maps.LatLng(37.499617546951285, 127.02959009953081),
     map: map,
     position: itda,
     icon: {
-      url: '/public/img/anchor.svg',
+      url: 'https://www.itdadev.com/public/img/anchor.svg',
     }
   });
 
@@ -32,7 +32,7 @@ var infowindow = new naver.maps.InfoWindow({
   borderColor: "#5452F6",
   borderWidth: 1,
   borderRadius: 8,
-  anchorSize: new naver.maps.Size(30, 30),
+  anchorSize: new naver.maps.Size(10, 10),
   anchorSkew: true,
   anchorColor: "#eee",
   pixelOffset: new naver.maps.Point(20, -20)
