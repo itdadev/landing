@@ -23,11 +23,18 @@ app.get("/", (req, res) => {
   res.sendFile(__dirname + "/public/index.html");
 });
 
-app.all('/*', function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "application/json");
-  next();
-});
+exports.handler = async (event) => {
+  const response = {
+      statusCode: 200,
+      headers: {
+          "Access-Control-Allow-Headers" : "Content-Type",
+          "Access-Control-Allow-Origin": "https://www.itdadev.com",
+          "Access-Control-Allow-Methods": "OPTIONS,POST,GET"
+      },
+      body: JSON.stringify('Hello from Lambda!'),
+  };
+  return response;
+};
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`)
