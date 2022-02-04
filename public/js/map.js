@@ -10,6 +10,9 @@ var itda = new naver.maps.LatLng(37.499617546951285, 127.02959009953081),
     position: itda,
     icon: {
       url: 'https://www.itdadev.com/public/img/anchor.svg',
+      size: new naver.maps.Size(22, 35),
+      origin: new naver.maps.Point(0, 0),
+      anchor: new naver.maps.Point(11, 35)
     }
   });
 
@@ -30,18 +33,6 @@ var contentString = [
    disableAnchor: true,
    pixelOffset: new naver.maps.Point(20, -20)
  });
-
-
-  // var infowindow = new naver.maps.InfoWindow({
-
-  //   content: infoWindowElement[0],
-
-  //   borderWidth: 0,
-  //   backgroundColor: 'transparent',
-
-  //   pixelOffset: new naver.maps.Point(0, -28),
-  // });
-
 
 naver.maps.Event.addListener(marker, "click", function (e) {
   if (infowindow.getMap()) {
