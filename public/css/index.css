@@ -10,10 +10,7 @@ section ul li>div {
   margin-top: 20px;
   display: flex;
   align-items: center;
-  border: 0.279392px solid var(--point-color);
   box-sizing: border-box;
-  box-shadow: 2.23513px 2.23513px 2.23513px rgba(0, 0, 0, 0.01);
-  border-radius: 4.47027px;
 }
 
 /* 전문분야 */
