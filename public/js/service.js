@@ -102,7 +102,7 @@ $(document).ready(function () {
 });
 
 $(window).resize(function () {
-  $('.aLink a').on('click', function (event) {
+  $('.aLink a').on('click', function () {
     $(this).siblings().removeClass('active');
     $(this).addClass('active');
   });
