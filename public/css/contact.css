@@ -105,6 +105,32 @@ textarea:focus::placeholder {
   opacity: 0;
 }
 
+li.captchaForm {
+  margin: 24px 0;
+}
+form ul li.captchaForm > div{
+  display: flex;
+  align-items: center;
+  gap: 0 1.2rem;
+}
+
+li.captchaForm > div:nth-child(1) span {
+  border: 1px solid var(--grey-color);
+  cursor: pointer;
+}
+
+li.captchaForm button {
+  display: inline-block;
+  width: 150px;
+  padding: 10px;
+  background-color: var(--point-color);
+  color: white;
+  border: none;
+  border-radius: 1rem;
+  outline: none;
+  cursor: pointer;
+}
+
 form li input::placeholder,
 textarea::placeholder {
   opacity: 1;
@@ -121,6 +147,11 @@ form .button-success {
   border-radius: 30px;
   color: white;
   cursor: pointer;
+}
+
+form .button-success:disabled {
+  background-color: var(--light-grey);
+  cursor: default;
 }
 
 @media (min-width: 1024px) {
