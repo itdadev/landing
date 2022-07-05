@@ -20,11 +20,11 @@ var contentString = [
   '<a class="iw_inner" href="https://www.itdadev.com" target="_blank" style="display:block; border-radius: 8px; padding: 10px 20px; border:1px solid #5452F6; overflow: hidden; background: #ffffff; width: 320px;">',
   '<div style="display: flex; align-items: flex-end; justify-content:center;">',
   '<img src="img/logo.png" height="auto" alt="잇다" class="thumb" style="height: 37px; width: auto; margin-right: 10px;"/>',
-  '<p style="font-weight: bold; color: #595959; width: 100%; font-size: 14px;">서울특별시 강남구 강남대로<br />94길 28 (강남역 12번 출구 도보 4분)</p>',
+  '<p style="font-weight: bold; color: #595959; width: 100%; font-size: 14px;">서울특별시 서초구 중앙로<br />20길 33-17 서초빌리지1, 202호</p>',
   '</div>',
   ' </a>',
 ].join('');
-
+  
 var infowindow = new naver.maps.InfoWindow({
   content: contentString,
   maxWidth: 400,
