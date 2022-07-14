@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.74e75313.css",
-    "main.js": "/static/js/main.fa341cab.js",
+    "main.css": "/static/css/main.1f2e89f8.css",
+    "main.js": "/static/js/main.5c99fed1.js",
     "static/media/itdaCompanyInfo.pdf": "/static/media/itdaCompanyInfo.5310b070e6975672a1a0.pdf",
     "static/media/logo.svg": "/static/media/logo.1be3ad147bc7cdd747f81dcfa213cca2.svg",
     "index.html": "/index.html",
-    "main.74e75313.css.map": "/static/css/main.74e75313.css.map",
-    "main.fa341cab.js.map": "/static/js/main.fa341cab.js.map"
+    "main.1f2e89f8.css.map": "/static/css/main.1f2e89f8.css.map",
+    "main.5c99fed1.js.map": "/static/js/main.5c99fed1.js.map"
   },
   "entrypoints": [
-    "static/css/main.74e75313.css",
-    "static/js/main.fa341cab.js"
+    "static/css/main.1f2e89f8.css",
+    "static/js/main.5c99fed1.js"
   ]
 }
